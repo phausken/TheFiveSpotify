@@ -6,16 +6,16 @@ currentUser: {
 users {
   1 : { id: 1,
   username: string,
-  playlists: [array of playlist ids]}
-  followed_users: [array of user ids]}
-  followed_playlists: [array of playlist ids]}
+  playlists: []}
+  followed_users: []}
+  followed_playlists: []}
   }
 
 artists {
   1 : {id: 1,
   name: string,
   image_url: string,
-  songs: [array of song ids]}
+  songs: []}
   }
 
 songs {
@@ -23,7 +23,7 @@ songs {
   title: string,
   image_url: string,
   artist_id: integer
-  sidemen: [array of artist ids]
+  sidemen: []
   }
 
 playlists {
@@ -31,7 +31,7 @@ playlists {
   title: string,
   image_url: string,
   user_id: integer,
-  song_ids: [array of song ids]
+  song_ids: []
   }
 }
 ```
