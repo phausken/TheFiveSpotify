@@ -1,4 +1,4 @@
-#Scheme Information
+#Schema Information
 
 ## Users
 column name | data type | details
@@ -8,20 +8,20 @@ username | string | not null, unique, indexed
 password_digest | string | not null
 session_token | string | not null, unique, indexed
 
-##Artists
+## Artists
 column name | data type | details
 ------------|-----------|--------
 id | integer | not null, primary key
 name | string | not null, indexed
 
 
-##Songs
+## Songs
 column name | data type | details
 ------------|-----------|--------
 id | integer | not null, primary key
 name | string | not null, indexed
 
-#SongCredits
+## SongCredits
 column name | data type | details
 ------------|-----------|--------
 id | integer | not null, primary key
@@ -30,14 +30,14 @@ song_id | integer | not null, foreign key, indexed
 main_artist | boolean | not null
 
 
-##Playlists
+## Playlists
 column name | data type | details
 ------------|-----------|--------
 id | integer | not null, primary key
 name | string | not null, indexed
 
 
-#PlaylistAdds
+## PlaylistAdds
 column name | data type | details
 ------------|-----------|--------
 id | integer | not null, primary key
@@ -45,7 +45,7 @@ playlist_id | integer | not null, foreign key, indexed
 song_id | integer | not null, foreign key, indexed
 
 
-#PlaylistFollows
+## PlaylistFollows
 column name | data type | details
 ------------|-----------|--------
 id | integer | not null, primary key

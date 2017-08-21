@@ -1,36 +1,36 @@
-#API Endpoints
+# API Endpoints
 
-##HTML API
+## HTML API
 
-###Root
+### Root
 
 * GET / - loads React web app
 
-##JSON API
+## JSON API
 
-###Users
+### Users
 
 * POST /api/users
 * GET /api/users/:id
 
-###Playlists
+### Playlists
 
 * GET /api/users/playlists
 * GET /api/users/playlists/:id
 * POST /api/users/playlists
 * PATCH /api/users/playlists/:id
 
-###Session
+### Session
 
 * POST /api/session
 * DELETE /api/session
 
-###Artists
+### Artists
 
 * GET /api/artists
 * GET /api/artists/:id
 
-###Songs
+### Songs
 
 * GET /api/songs
-* GET /api/songs/:id 
+* GET /api/songs/:id

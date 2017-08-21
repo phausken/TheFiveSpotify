@@ -1,9 +1,9 @@
-#Components Hierarchy
+# Components Hierarchy
 
-###Auth Form Container
+### Auth Form Container
 * Auth Form
 
-###Home Container
+### Home Container
 * Sidebar
 * Navbar
 * Continuous Play
@@ -11,21 +11,21 @@
 * SongIndex
 * ArtistIndex
 
-###Playlist Container
+### Playlist Container
 * PlaylistSongs
 
-###Search
+### Search
 * PlaylistResults
 * SongResults
 * ArtistResults
 
-###New Playlist
+### New Playlist
 
-###User
+### User
 * UserPlaylists
 
 
-##Routes
+## Routes
 
 Path | Component
 -----|----------

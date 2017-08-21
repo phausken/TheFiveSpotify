@@ -1,3 +1,4 @@
+```javascript
 {
 currentUser: {
     id: 1,
@@ -33,3 +34,4 @@ playlists {
   song_ids: [array of song ids]
   }
 }
+```
