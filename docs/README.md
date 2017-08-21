@@ -18,11 +18,11 @@ The Five Spotify is a web application inspired by Spotify (web version) built us
 
 ## Design Docs
 
-* [View Wireframes][https://github.com/phausken/TheFiveSpotify/tree/master/docs/wireframes]
-* [React Components][https://github.com/phausken/TheFiveSpotify/blob/master/docs/components.md]
-* [API Endpoints][https://github.com/phausken/TheFiveSpotify/blob/master/docs/api-endpoints.md]
-* [DB Schema][https://github.com/phausken/TheFiveSpotify/blob/master/docs/db_schema.md]
-* [Sample State][https://github.com/phausken/TheFiveSpotify/blob/master/docs/sample_state.md]
+* [View Wireframes](https://github.com/phausken/TheFiveSpotify/tree/master/docs/wireframes)
+* [React Components](https://github.com/phausken/TheFiveSpotify/blob/master/docs/components.md)
+* [API Endpoints](https://github.com/phausken/TheFiveSpotify/blob/master/docs/api-endpoints.md)
+* [DB Schema](https://github.com/phausken/TheFiveSpotify/blob/master/docs/db_schema.md)
+* [Sample State](https://github.com/phausken/TheFiveSpotify/blob/master/docs/sample_state.md)
 
 ## Implementation Timeline
 
