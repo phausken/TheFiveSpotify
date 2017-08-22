@@ -1,9 +1,11 @@
 ```javascript
 {
-currentUser: {
+session : {  
+  currentUser: {
     id: 1,
-    username: "peter_hausken"
-users {
+    username: "peter_hausken" }
+  errors : [] }
+users: {
   1 : { id: 1,
   username: string,
   playlists: []}
@@ -11,14 +13,14 @@ users {
   followed_playlists: []}
   }
 
-artists {
+artists: {
   1 : {id: 1,
   name: string,
   image_url: string,
   songs: []}
   }
 
-songs {
+songs: {
   1 : {id: 1,
   title: string,
   image_url: string,
@@ -26,7 +28,7 @@ songs {
   sidemen: []
   }
 
-playlists {
+playlists: {
   1: {id: 1,
   title: string,
   image_url: string,
