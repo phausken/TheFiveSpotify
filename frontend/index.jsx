@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
   window.getState = store.getState;
   window.dispatch = store.dispatch;
 
-  ReactDOM.render(<h1>Welcome to The Five Spotify</h1>, root);
+  ReactDOM.render(<Root store={ store } />, root);
 
 
 
