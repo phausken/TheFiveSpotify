@@ -54,7 +54,7 @@ class SessionForm extends React.Component {
     }
     return (
       <div>
-        {this.props.loggedIn ? <Redirect to="#" /> : <div></div>}
+        {this.props.loggedIn ? <Redirect to="/main_page" /> : <div></div>}
         <h3>{ header }</h3>
         <h6>{ errors }</h6>
         <form onSubmit= { this.handleSubmit } className="submitform">
@@ -73,7 +73,7 @@ class SessionForm extends React.Component {
               value={ this.state.password }
               />
             <button>Submit!</button>
-            <a href='#' onClick={ this.handleGuestSubmit }>Demo Login</a>
+            <a href='/main_page' onClick={ this.handleGuestSubmit }>Demo Login</a>
         </form>
         <Link to={ altPath }>{ altLink }</Link>
       </div>
