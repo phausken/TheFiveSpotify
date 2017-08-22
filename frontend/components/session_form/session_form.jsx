@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Redirect } from 'react-router';
 
 class SessionForm extends React.Component {
 
@@ -9,7 +10,13 @@ class SessionForm extends React.Component {
       username: "",
       password: "",
     };
+
+
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+    this.handleGuestSubmit = this.handleGuestSubmit.bind(this);
   }
+
 
 
   handleSubmit(e) {
@@ -22,11 +29,22 @@ class SessionForm extends React.Component {
    });
   }
 
+  handleGuestSubmit(e){
+    e.preventDefault();
+    const user = ({
+      username: "Guest",
+      password: "password",
+    });
+    this.setState({ user });
+    this.props.processGuest(user);
+  }
+
   handleChange(field) {
     return (e) => this.setState({ [field]: e.currentTarget.value });
   }
 
  render (){
+
     const header = (this.props.formType === 'login' ? 'Log In' : 'Sign Up');
     const altLink = (this.props.formType === 'login' ? 'Sign Up' : 'Log In');
     const altPath = (this.props.formType === 'login' ? "/signup" : "/login");
@@ -55,6 +73,7 @@ class SessionForm extends React.Component {
               value={ this.state.password }
               />
             <button>Submit!</button>
+            <a href='#' onClick={ this.handleGuestSubmit }>Demo Login</a>
         </form>
         <Link to={ altPath }>{ altLink }</Link>
       </div>
