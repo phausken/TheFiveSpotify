@@ -7,7 +7,7 @@ import { ProtectedRoute } from '../util/route_util';
 const Root = ({ store }) => (
   <Provider store={ store }>
     <HashRouter>
-      <ProtectedRoute path='/' component={ App } />
+      <App/>
     </HashRouter>
   </Provider>
 );
