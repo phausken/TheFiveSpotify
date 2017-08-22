@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { login, logout, signUp} from './util/session_api_util.js';
+import { login, logout, signup} from './util/session_api_util.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   const root = document.getElementById('root');
@@ -8,5 +8,5 @@ document.addEventListener('DOMContentLoaded', () => {
 
   window.login = login;
   window.logout = logout;
-  window.signUp = signUp;
+  window.signUp = signup;
 });
