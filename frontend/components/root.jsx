@@ -13,3 +13,6 @@ const Root = ({ store }) => (
 );
 
 export default Root;
+
+
+    // <ProtectedRoute path="#" component={App} />

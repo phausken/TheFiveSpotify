@@ -57,7 +57,7 @@ class SessionForm extends React.Component {
         {this.props.loggedIn ? <Redirect to="#" /> : <div></div>}
         <h3>{ header }</h3>
         <h6>{ errors }</h6>
-        <form onSubmit= { this.handleSubmit }>
+        <form onSubmit= { this.handleSubmit } className="submitform">
           <label>Username</label>
           <input
             type='text'
