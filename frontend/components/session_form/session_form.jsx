@@ -54,7 +54,7 @@ class SessionForm extends React.Component {
     }
     return (
       <div>
-        {this.props.loggedIn ? <Redirect to="/" /> : <div></div>}
+        {this.props.loggedIn ? <Redirect to="#" /> : <div></div>}
         <h3>{ header }</h3>
         <h6>{ errors }</h6>
         <form onSubmit= { this.handleSubmit }>
