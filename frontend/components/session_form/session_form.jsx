@@ -71,7 +71,7 @@ class SessionForm extends React.Component {
         <div className="screen-login">
           {this.props.loggedIn ? <Redirect to="/main_page" /> : <div></div>}
           <h3>{ header }</h3>
-          <h6>{ errors }</h6>
+          <h6 className="errors">{ errors }</h6>
           <form onSubmit= { this.handleSubmit } className="submitform">
             <label>Username</label>
             <input
@@ -93,8 +93,8 @@ class SessionForm extends React.Component {
           <span>{ altMessage }<Link to={ altPath }>{ altLink }</Link></span>
         </div>
         <div className="login-features">
-          <h1 className="login-logo">'Get the right music, right now'</h1>
-          <h2 className="login-sublogo">'Listen to millions of songs for free'</h2>
+          <h1 className="login-logo">Get the right music, right now</h1>
+          <h2 className="login-sublogo">Listen to millions of songs for free</h2>
           <ul className="login-list">
             <li>Search and discover music you'll love</li>
             <li>Create playlists of your favorite music</li>

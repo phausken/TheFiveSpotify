@@ -39,21 +39,23 @@ html, body, main {
 }
 
 .login-features{
-
+  color: #FFF;
 
 }
 
 .screen-login{
   display: flex;
   flex-direction: column;
-  border-right: 1px black;
+  border-right: 1px #FFF;
   color: #FFF;
+  padding: 45px;
 }
 
 .submitform{
   display: flex;
   flex-direction: column;
   color: #FFF;
+  width: 330px;
 }
 
 .submitform > label {
@@ -84,8 +86,23 @@ width: 100%;
       border: 0;
       color: #FFF;
       font-weight: normal;
-      text-decoration: none;
       text-rendering: optimizeLegibility;
       border-bottom: solid 1px #FFF;
       height: 27px;
+}
+
+.submitform > input:focus{
+  outline: none;
+}
+
+.login-features{
+  width: 540px;
+  padding: 45px;
+}
+
+.login-logo{
+
+    color: #07d159;
+    font-size: 60px;
+    font-weight: bold;
 }
