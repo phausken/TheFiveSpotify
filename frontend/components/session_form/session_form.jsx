@@ -2,6 +2,14 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Redirect } from 'react-router';
 
+class FakeComponent extends React.Component{
+  render(){
+    return (
+      <span className="fake"></span>
+    )
+  }
+}
+
 class SessionForm extends React.Component {
 
   constructor(props){
@@ -9,7 +17,6 @@ class SessionForm extends React.Component {
     this.state = {
       username: "",
       password: "",
-      errors: this.props.errors
     };
 
 
@@ -18,7 +25,8 @@ class SessionForm extends React.Component {
     this.handleGuestSubmit = this.handleGuestSubmit.bind(this);
   }
 
-
+  componentDidMount ()
+    { this.props.removeErrors(); }
 
   handleSubmit(e) {
    e.preventDefault();
@@ -46,11 +54,8 @@ class SessionForm extends React.Component {
     const user = ({
       username: "",
       password: "",
-      errors: [],
     })
   }
-
-
 
   handleChange(field) {
     return (e) => this.setState({ [field]: e.currentTarget.value });
@@ -58,20 +63,26 @@ class SessionForm extends React.Component {
 
  render (){
 
-    const header = (this.props.formType === 'login' ? 'Log In' : 'Sign Up');
+    const header = (this.props.formType === 'login' ? 'Log in to an existing account :' : 'Sign up for a free account :');
     const altLink = (this.props.formType === 'login' ? 'Sign up here!' : 'Log in here!');
     const altMessage = (this.props.formType === 'login' ? 'Don\u0027t have an account? ' : 'Already have an account? ')
     const altPath = (this.props.formType === 'login' ? "/signup" : "/login");
     let errors;
     if (this.props.errors){
-      errors = this.props.errors;
+      errors = this.props.errors.map((error) => {return <li>{ error }</li>;})
     }
     return (
       <div className="big-wrap">
         <div className="screen-login">
           {this.props.loggedIn ? <Redirect to="/main_page" /> : <div></div>}
-          <h3>{ header }</h3>
+          <h3 className="header">The Five Spotify</h3>
+          <h3 className="header">{ header }</h3>
           <h6 className="errors">{ errors }</h6>
+          <button onClick={ this.handleGuestSubmit }>Demo Login</button>
+          <em>
+            {FakeComponent}
+            or
+            {FakeComponent}</em>
           <form onSubmit= { this.handleSubmit } className="submitform">
             <label>Username</label>
             <input
@@ -88,9 +99,8 @@ class SessionForm extends React.Component {
                 value={ this.state.password }
                 />
               <button>Submit</button>
-              <button onClick={ this.handleGuestSubmit }>Demo Login</button>
           </form>
-          <span>{ altMessage }<Link to={ altPath }>{ altLink }</Link></span>
+          <span className="alt-message">{ altMessage }<Link to={ altPath }>{ altLink }</Link></span>
         </div>
         <div className="login-features">
           <h1 className="login-logo">Get the right music, right now</h1>

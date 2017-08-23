@@ -24,6 +24,11 @@ html, body, main {
   padding: 0;
   font-family: 'Montserrat', sans-serif;
   background-image: url(https://s-media-cache-ak0.pinimg.com/originals/05/97/9c/05979cf03f82ca70a5b1099cfbcfbbe4.jpg);
+  background-color: black;
+}
+
+img {
+  opacity: 0.5;
 }
 
 
@@ -46,9 +51,31 @@ html, body, main {
 .screen-login{
   display: flex;
   flex-direction: column;
-  border-right: 1px #FFF;
+  border-right: 1px;
+  border-color: #FFF;
   color: #FFF;
   padding: 45px;
+  width: 330px;
+  height: 480px;
+}
+
+.header {
+  align-self: center;
+}
+
+
+em{
+  font-style: normal;
+  align-self: center;
+}
+
+.fake{
+  border-top: solid 1px #FFF;
+  content: "";
+  display: block;
+  position: absolute;
+  top: .5em;
+  width: calc(50% - 20px);
 }
 
 .submitform{
@@ -60,6 +87,26 @@ html, body, main {
 
 .submitform > label {
   justify-content: flex-start;
+  padding-top: 5px;
+}
+
+.screen-login > button {
+  background-color: transparent;
+border: solid 1.5px #FFF;
+border-radius: 256px;
+color: #FFF;
+display: block;
+font-size: 13px;
+letter-spacing: .03em;
+line-height: 1.25em;
+margin: 20px auto;
+max-width: 320px;
+height: 41px;
+overflow: hidden;
+padding: 2px 15px 0;
+text-align: center;
+text-transform: uppercase;
+width: 100%;
 }
 
 .submitform > button {
@@ -79,6 +126,7 @@ padding: 2px 15px 0;
 text-align: center;
 text-transform: uppercase;
 width: 100%;
+
 }
 
 .submitform > input {
@@ -89,6 +137,8 @@ width: 100%;
       text-rendering: optimizeLegibility;
       border-bottom: solid 1px #FFF;
       height: 27px;
+      padding-top: 5px;
+      font-size: 13px;
 }
 
 .submitform > input:focus{
@@ -100,9 +150,18 @@ width: 100%;
   padding: 45px;
 }
 
+.errors{
+  color: #ce1a2b;
+  height: 10px;
+}
+
 .login-logo{
 
     color: #07d159;
     font-size: 60px;
     font-weight: bold;
+}
+
+.login-list > li {
+  list-style-image: url(https://play.spotify.edgekey.net/client/0b524a4/images/checkmark.png);
 }
