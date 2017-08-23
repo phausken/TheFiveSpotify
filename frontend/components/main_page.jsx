@@ -5,7 +5,7 @@ class MainPage extends React.Component {
 
   render() {
     return (
-     <header>
+     <header className="main-page">
       <h1>The Five Spotify</h1>
       <nav><UsernameContainer /></nav>
       </header>

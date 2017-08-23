@@ -31,7 +31,10 @@ img {
   opacity: 0.5;
 }
 
-
+.main-page{
+    font-family: 'Montserrat', sans-serif;
+    color: #FFF;
+}
 
 .big-wrap {
   padding-top: 150px;
@@ -55,8 +58,11 @@ img {
   border-color: #FFF;
   color: #FFF;
   padding: 45px;
+  padding-top: 20px;
   width: 330px;
   height: 480px;
+  border-right: 1px solid #FFF;
+  justify-content: space-between;
 }
 
 .header {
@@ -84,6 +90,8 @@ em{
   color: #FFF;
   width: 330px;
 }
+
+
 
 .submitform > label {
   justify-content: flex-start;

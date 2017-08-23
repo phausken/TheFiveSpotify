@@ -9,4 +9,4 @@
 User.destroy_all
 
 User1 = User.create(username: "phausken", password: "password")
-User2 = User.create(username: "test", password: "password")
+User2 = User.create(username: "Guest", password: "password")
