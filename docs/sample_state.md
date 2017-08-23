@@ -30,7 +30,7 @@ songs: {
 
 playlists: {
   1: {id: 1,
-  title: string,
+  name: string,
   image_url: string,
   user_id: integer,
   song_ids: []

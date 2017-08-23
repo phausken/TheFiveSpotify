@@ -13,7 +13,7 @@ class Api::PlaylistsController < ApplicationController
   end
 
   def show
-    @playlist = Playlist.find_by(playlist_params)
+    @playlist = Playlist.find(params[:id])
     render :show
   end
 
