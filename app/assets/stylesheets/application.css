@@ -18,3 +18,47 @@
   display: flex;
   flex-direction: column;
 }*/
+html, body, main {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-image: url(https://s-media-cache-ak0.pinimg.com/originals/05/97/9c/05979cf03f82ca70a5b1099cfbcfbbe4.jpg);
+}
+
+
+
+.big-wrap {
+  padding-top: 150px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  height: 100%;
+}
+
+.screen-login{
+  display: flex;
+  flex-direction: column;
+  border-right:
+}
+
+.submitform{
+  display: flex;
+  flex-direction: column;
+}
+
+.submitform > label {
+  text-decoration-color: #FFF;
+}
+
+.submitform > input {
+      font-family: "proxima_nova","Helvetica Neue","Helvetica","Arial",sans-serif;
+      background-color: transparent;
+      border: 0;
+      color: #FFF;
+      font-weight: normal;
+      text-decoration: none;
+      text-rendering: optimizeLegibility;
+      border-bottom: solid 1px #FFF;
+}

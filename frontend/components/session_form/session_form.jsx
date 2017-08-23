@@ -46,36 +46,47 @@ class SessionForm extends React.Component {
  render (){
 
     const header = (this.props.formType === 'login' ? 'Log In' : 'Sign Up');
-    const altLink = (this.props.formType === 'login' ? 'Sign Up' : 'Log In');
+    const altLink = (this.props.formType === 'login' ? 'Sign up here!' : 'Log in here!');
+    const altMessage = (this.props.formType === 'login' ? 'Don\u0027t have an account? ' : 'Already have an account? ')
     const altPath = (this.props.formType === 'login' ? "/signup" : "/login");
     let errors;
     if (this.props.errors){
       errors = this.props.errors;
     }
     return (
-      <div>
-        {this.props.loggedIn ? <Redirect to="/main_page" /> : <div></div>}
-        <h3>{ header }</h3>
-        <h6>{ errors }</h6>
-        <form onSubmit= { this.handleSubmit } className="submitform">
-          <label>Username</label>
-          <input
-            type='text'
-            id='username'
-            onChange={ this.handleChange('username') }
-            value={ this.state.username }
-            />
-          <label>Password</label>
+      <div className="big-wrap">
+        <div className="screen-login">
+          {this.props.loggedIn ? <Redirect to="/main_page" /> : <div></div>}
+          <h3>{ header }</h3>
+          <h6>{ errors }</h6>
+          <form onSubmit= { this.handleSubmit } className="submitform">
+            <label>Username</label>
             <input
-              type='password'
-              id='password'
-              onChange={ this.handleChange('password') }
-              value={ this.state.password }
+              type='text'
+              id='username'
+              onChange={ this.handleChange('username') }
+              value={ this.state.username }
               />
-            <button>Submit!</button>
-            <a href='/main_page' onClick={ this.handleGuestSubmit }>Demo Login</a>
-        </form>
-        <Link to={ altPath }>{ altLink }</Link>
+            <label>Password</label>
+              <input
+                type='password'
+                id='password'
+                onChange={ this.handleChange('password') }
+                value={ this.state.password }
+                />
+              <button>Submit!</button>
+              <a href='/main_page' onClick={ this.handleGuestSubmit }>Demo Login</a>
+          </form>
+          <span>{ altMessage }<Link to={ altPath }>{ altLink }</Link></span>
+        </div>
+        <div className="login-features">
+          <h1>'Get the right music, right now'</h1>
+          <h2>'Listen to millions of songs for free'</h2>
+          <ul>
+            <li>Search and discover music you'll love</li>
+            <li>Create playlists of your favorite music</li>
+          </ul>
+        </div>
       </div>
     );
   }
