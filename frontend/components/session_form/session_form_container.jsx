@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import SessionForm from './session_form';
-import {login, signup, removeErrors} from '../../actions/session_actions';
+import {login, signup, clearErrors} from '../../actions/session_actions';
 import { withRouter } from 'react-router-dom';
 
 const mapStateToProps = (state, ownProps) => {
@@ -17,13 +17,13 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     return {
     processForm: (user) => dispatch(login(user)),
     processGuest: (user) => dispatch(login(user)),
-    removeErrors: () => dispatch(removeErrors()),
+    clearErrors: () => dispatch(clearErrors()),
     };
   } else if ( ownProps.location.pathname.slice(1) === 'signup' ) {
     return {
      processForm: (user) => dispatch(signup(user)),
      processGuest: (user) => dispatch(login(user)),
-     removeErrors: () => dispatch(removeErrors()),
+     clearErrors: () => dispatch(clearErrors()),
    };
   }
 };

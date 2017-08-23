@@ -23,7 +23,7 @@ html, body, main {
   margin: 0;
   padding: 0;
   font-family: 'Montserrat', sans-serif;
-  background-image: url(https://s-media-cache-ak0.pinimg.com/originals/05/97/9c/05979cf03f82ca70a5b1099cfbcfbbe4.jpg);
+  background-image: image-url('spotify-background.jpg');
   background-color: black;
 }
 
@@ -163,5 +163,5 @@ width: 100%;
 }
 
 .login-list > li {
-  list-style-image: url(https://play.spotify.edgekey.net/client/0b524a4/images/checkmark.png);
+  list-style-image: image-url("checkmark.png");
 }

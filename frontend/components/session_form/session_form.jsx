@@ -2,13 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Redirect } from 'react-router';
 
-class FakeComponent extends React.Component{
-  render(){
-    return (
-      <span className="fake"></span>
-    )
-  }
-}
 
 class SessionForm extends React.Component {
 
@@ -25,9 +18,6 @@ class SessionForm extends React.Component {
     this.handleGuestSubmit = this.handleGuestSubmit.bind(this);
   }
 
-  componentDidMount ()
-    { this.props.removeErrors(); }
-
   handleSubmit(e) {
    e.preventDefault();
    const user = Object.assign({}, this.state);
@@ -43,7 +33,6 @@ class SessionForm extends React.Component {
     const user = ({
       username: "Guest",
       password: "password",
-      errors: [],
     });
     this.setState({ user });
     this.props.processGuest(user);
@@ -80,9 +69,9 @@ class SessionForm extends React.Component {
           <h6 className="errors">{ errors }</h6>
           <button onClick={ this.handleGuestSubmit }>Demo Login</button>
           <em>
-            {FakeComponent}
+
             or
-            {FakeComponent}</em>
+          </em>
           <form onSubmit= { this.handleSubmit } className="submitform">
             <label>Username</label>
             <input
@@ -100,7 +89,7 @@ class SessionForm extends React.Component {
                 />
               <button>Submit</button>
           </form>
-          <span className="alt-message">{ altMessage }<Link to={ altPath }>{ altLink }</Link></span>
+          <span className="alt-message">{ altMessage }<Link onClick={ this.props.clearErrors } to={ altPath }>{ altLink }</Link></span>
         </div>
         <div className="login-features">
           <h1 className="login-logo">Get the right music, right now</h1>

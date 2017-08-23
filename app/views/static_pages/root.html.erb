@@ -1,6 +1,14 @@
 <main id="root"></main>
 
 <script type="text/javascript">
+  window.StaticImages = {
+    background: "<%=image_path('spotify-background.jpg')  %>",
+    checkmark: "<%=image_path('checkmark.png')  %>"
+  }
+</script>
+
+
+<script type="text/javascript">
   <% if logged_in? %>
     window.currentUser = <%= render(
       "api/users/user.json.jbuilder",

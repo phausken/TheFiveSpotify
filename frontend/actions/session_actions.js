@@ -21,7 +21,6 @@ export const receiveErrors = (errors) => {
 export const clearErrors = () => {
   return {
     type: CLEAR_ERRORS,
-    errors: [],
   };
 };
 
@@ -35,12 +34,6 @@ export const login = user => dispatch => {
   return APIUtil.login(user)
     .then(res => dispatch(receiveCurrentUser(res)),
     res => dispatch(receiveErrors(res.responseJSON)));
-};
-
-export const removeErrors = () => dispatch => {
-  return (
-    dispatch(clearErrors())
-  );
 };
 
 
