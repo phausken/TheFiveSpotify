@@ -9,6 +9,7 @@ class SessionForm extends React.Component {
     this.state = {
       username: "",
       password: "",
+      errors: this.props.errors
     };
 
 
@@ -34,10 +35,22 @@ class SessionForm extends React.Component {
     const user = ({
       username: "Guest",
       password: "password",
+      errors: [],
     });
     this.setState({ user });
     this.props.processGuest(user);
   }
+
+  handleSwitch(e){
+    e.preventDefault();
+    const user = ({
+      username: "",
+      password: "",
+      errors: [],
+    })
+  }
+
+
 
   handleChange(field) {
     return (e) => this.setState({ [field]: e.currentTarget.value });
@@ -74,15 +87,15 @@ class SessionForm extends React.Component {
                 onChange={ this.handleChange('password') }
                 value={ this.state.password }
                 />
-              <button>Submit!</button>
-              <a href='/main_page' onClick={ this.handleGuestSubmit }>Demo Login</a>
+              <button>Submit</button>
+              <button onClick={ this.handleGuestSubmit }>Demo Login</button>
           </form>
           <span>{ altMessage }<Link to={ altPath }>{ altLink }</Link></span>
         </div>
         <div className="login-features">
-          <h1>'Get the right music, right now'</h1>
-          <h2>'Listen to millions of songs for free'</h2>
-          <ul>
+          <h1 className="login-logo">'Get the right music, right now'</h1>
+          <h2 className="login-sublogo">'Listen to millions of songs for free'</h2>
+          <ul className="login-list">
             <li>Search and discover music you'll love</li>
             <li>Create playlists of your favorite music</li>
           </ul>

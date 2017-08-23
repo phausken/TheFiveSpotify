@@ -22,7 +22,8 @@ html, body, main {
   height: 100%;
   margin: 0;
   padding: 0;
-  /*background-image: url(https://s-media-cache-ak0.pinimg.com/originals/05/97/9c/05979cf03f82ca70a5b1099cfbcfbbe4.jpg);*/
+  font-family: 'proxima-nova';
+  background-image: url(https://s-media-cache-ak0.pinimg.com/originals/05/97/9c/05979cf03f82ca70a5b1099cfbcfbbe4.jpg);
 }
 
 
@@ -37,23 +38,49 @@ html, body, main {
   height: 100%;
 }
 
+.login-features{
+
+
+}
+
 .screen-login{
   display: flex;
   flex-direction: column;
-  border-right:
+  border-right: 1px black;
+  color: #FFF;
 }
 
 .submitform{
   display: flex;
   flex-direction: column;
+  color: #FFF;
 }
 
 .submitform > label {
-  text-decoration-color: #FFF;
+  justify-content: flex-start;
+}
+
+.submitform > button {
+  background-color: transparent;
+border: solid 1.5px #FFF;
+border-radius: 256px;
+color: #FFF;
+display: block;
+font-size: 13px;
+letter-spacing: .03em;
+line-height: 1.25em;
+margin: 20px auto;
+max-width: 320px;
+height: 41px;
+overflow: hidden;
+padding: 2px 15px 0;
+text-align: center;
+text-transform: uppercase;
+width: 100%;
 }
 
 .submitform > input {
-      font-family: "proxima_nova","Helvetica Neue","Helvetica","Arial",sans-serif;
+      font-family: sans-serif;
       background-color: transparent;
       border: 0;
       color: #FFF;
