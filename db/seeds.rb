@@ -10,3 +10,22 @@ User.destroy_all
 
 User1 = User.create(username: "phausken", password: "password")
 User2 = User.create(username: "Guest", password: "password")
+
+Playlist.destroy_all
+
+Playlist1 = Playlist.create(name: "50s Jazz")
+Playlist2 = Playlist.create(name: "60s Jazz")
+
+Song.destroy_all
+
+Song1 = Song.create(title: "So What")
+Song2 = Song.create(title: "Moments Notice")
+Song3 = Song.create(title: "Freedom Jazz Dance")
+Song4 = Song.create(title: "Ascension")
+
+PlaylistAdd.destroy_all
+
+PlaylistAdd1 = PlaylistAdd.create(playlist_id: Playlist1.id, song_id: Song1.id)
+PlaylistAdd2 = PlaylistAdd.create(playlist_id: Playlist1.id, song_id: Song2.id)
+PlaylistAdd3 = PlaylistAdd.create(playlist_id: Playlist2.id, song_id: Song3.id)
+PlaylistAdd4 = PlaylistAdd.create(playlist_id: Playlist2.id, song_id: Song4.id)
