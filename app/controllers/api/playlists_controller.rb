@@ -27,7 +27,7 @@ class Api::PlaylistsController < ApplicationController
   end
 
   def index
-    @playlist = Playlist.all
+    @playlists = Playlist.all
   end
 
   def destroy

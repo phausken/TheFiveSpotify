@@ -9,12 +9,13 @@
 User.destroy_all
 
 User1 = User.create(username: "phausken", password: "password")
-User2 = User.create(username: "Guest", password: "password")
+User2 = User.create(username: "zhausken", password: "password")
+User3 = User.create(username: "Guest", password: "password")
 
 Playlist.destroy_all
 
-Playlist1 = Playlist.create(name: "50s Jazz")
-Playlist2 = Playlist.create(name: "60s Jazz")
+Playlist1 = Playlist.create(name: "50s Jazz", image_url: 'img1', user_id: User1.id)
+Playlist2 = Playlist.create(name: "60s Jazz", image_url: 'img1', user_id: User2.id)
 
 Song.destroy_all
 
