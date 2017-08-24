@@ -9,10 +9,10 @@ class MainPage extends React.Component {
   render() {
     return (
       <div>
-     <header className="main-page">
+     <nav>
       <h1>The Five Spotify</h1>
       <nav><UsernameContainer /></nav>
-      </header>
+      </nav>
       <div>
         < PlaylistsIndexContainer />
       </div>
