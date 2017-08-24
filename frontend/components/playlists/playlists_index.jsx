@@ -12,7 +12,6 @@ class PlaylistsIndex extends React.Component {
 
 
   render(){
-    debugger;
 
     const allPlaylists = this.props.playlists.map((playlist) => <li>{playlist.name}</li>);
 

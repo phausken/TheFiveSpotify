@@ -5,9 +5,9 @@ class Username extends React.Component {
   render(){
     if (this.props.currentUser){
       return (
-        <div>
+        <div className="username">
           <h3> { this.props.currentUser.username } </h3>
-          <button onClick={ this.props.logout}>Log Out</button>
+          <button className="logout" onClick={ this.props.logout}>Log Out</button>
         </div>
       );
     } else {

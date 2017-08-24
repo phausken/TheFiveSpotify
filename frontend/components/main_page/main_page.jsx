@@ -8,14 +8,13 @@ class MainPage extends React.Component {
 
   render() {
     return (
-      <div>
-     <nav>
-      <h1>The Five Spotify</h1>
-      <nav><UsernameContainer /></nav>
-      </nav>
-      <div>
-        < PlaylistsIndexContainer />
-      </div>
+      <div className="main-page">
+       <nav className="left-nav">
+         < UsernameContainer />
+        </nav>
+        <div className="index">
+          < PlaylistsIndexContainer />
+        </div>
       </div>
     );
   }
