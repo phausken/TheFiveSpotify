@@ -1,6 +1,7 @@
 export const getCurrentUserPlaylists = ({session, playlists}) => {
-  const matchIds = session.currentUser.playlist_ids;
-  const playlistIds = Object.keys(playlists).map(id => parseInt(id));
+  debugger;
+  let matchIds = session.currentUser.playlist_ids;
+  let playlistIds = Object.keys(playlists).map(id => parseInt(id));
   let result = [];
 
   for (let i = 0; i < playlistIds.length; i++){

@@ -16,6 +16,8 @@ Playlist.destroy_all
 
 Playlist1 = Playlist.create(name: "50s Jazz", image_url: 'img1', user_id: User1.id)
 Playlist2 = Playlist.create(name: "60s Jazz", image_url: 'img1', user_id: User2.id)
+Playlist3 = Playlist.create(name: "Ballads", image_url: 'img1', user_id: User1.id)
+
 
 Song.destroy_all
 
