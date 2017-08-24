@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import configureStore from './store/store';
 import Root from './components/root';
-import { fetchPlaylists, fetchPlaylist, receivePlaylists, receivePlaylist } from './actions/playlist_actions';
+import { fetchPlaylists, fetchPlaylist, receivePlaylists, receivePlaylist, createPlaylist, editPlaylist, deletePlaylist } from './actions/playlist_actions';
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -23,9 +23,9 @@ document.addEventListener('DOMContentLoaded', () => {
   window.fetchPlaylist = fetchPlaylist;
   window.receivePlaylist = receivePlaylist;
   window.receivePlaylists = receivePlaylists;
-  // window.createPlaylist = createPlaylist;
-  // window.editPlaylist = editPlaylist;
-  // window.deletePlaylist = deletePlaylist;
+  window.createPlaylist = createPlaylist;
+  window.editPlaylist = editPlaylist;
+  window.deletePlaylist = deletePlaylist;
   ReactDOM.render(<Root store={ store } />, root);
 
 

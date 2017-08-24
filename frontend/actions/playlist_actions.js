@@ -18,7 +18,6 @@ export const receivePlaylist = (playlist) => {
 };
 
 export const fetchPlaylists = () => dispatch => {
-  debugger
   return APIUtil.fetchPlaylists()
   .then(playlists => dispatch(receivePlaylists(playlists)));
 };
@@ -30,6 +29,15 @@ export const fetchPlaylist = id => dispatch => {
 
 export const createPlaylist = playlist => dispatch => {
   return APIUtil.createPlaylist(playlist)
-    .then(playlist => dispatch(receivePlaylist(playlist)),
-    )
-}
+    .then(res => dispatch(receivePlaylist(res)));
+};
+
+export const editPlaylist = playlist => dispatch => {
+  return APIUtil.editPlaylist(playlist)
+    .then(res => dispatch(receivePlaylist(res)));
+};
+
+export const deletePlaylist = id => dispatch => {
+  return APIUtil.deletePlaylist(id)
+    .then(() => dispatch(receivePlaylist(null)));
+};

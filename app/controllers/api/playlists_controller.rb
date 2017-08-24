@@ -32,10 +32,10 @@ class Api::PlaylistsController < ApplicationController
   end
 
   def destroy
-    @playlist = Playlist.find_by(playlist_params)
+    @playlist = Playlist.find(params[:id])
     if @playlist
       @playlist.delete
-      render :index
+      render json: "{}"
     else
       render json: @playlist.errors.full_messages, status: 422
     end
