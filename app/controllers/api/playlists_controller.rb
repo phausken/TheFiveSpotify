@@ -17,9 +17,10 @@ class Api::PlaylistsController < ApplicationController
     render :show
   end
 
-  def edit
-    @playlist = Playlist.find_by(playlist_params)
-    if @playlist.update
+  def update
+    @playlist = Playlist.find(params[:id])
+    if @playlist
+      @playlist.update(playlist_params)
       render :show
     else
       render json: @playlist.errors.full_messages, status: 422
@@ -34,7 +35,7 @@ class Api::PlaylistsController < ApplicationController
     @playlist = Playlist.find_by(playlist_params)
     if @playlist
       @playlist.delete
-      render :new
+      render :index
     else
       render json: @playlist.errors.full_messages, status: 422
     end

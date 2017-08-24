@@ -20,9 +20,9 @@ export const createPlaylist = (playlist) => {
   });
 };
 
-export const editPlaylist = (playlist) => {
+export const editPlaylist = (id) => {
   return $.ajax({
-    url: `api/playlists/${playlist.id}`,
+    url: `api/playlists/${id}`,
     method: 'PATCH',
     data: { playlist },
   });
