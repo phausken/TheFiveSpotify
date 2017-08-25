@@ -10,9 +10,9 @@ class PlaylistDetail extends React.Component {
 
     return(
       <div className="playlist-detail">
-        <div className="playlist-cover">
+        <Link to={playlistId}><div className="playlist-cover">
           <div className="musical-note"></div>
-        </div>
+        </div></Link>
       <div className="playlist-detail-text">
         <Link to={playlistId}><h6>{this.props.playlist.name}</h6></Link>
         <h6>By {this.props.playlist.user.username}</h6>
