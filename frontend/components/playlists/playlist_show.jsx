@@ -1,4 +1,4 @@
-import React from 'React';
+import React from 'react';
 import { Link } from 'react-router-dom';
 
 class PlaylistShow extends React.Component {
@@ -35,7 +35,7 @@ class PlaylistShow extends React.Component {
           <h6>{ songCount } { countWord }</h6>
           <h6>By { playlist.user.username }</h6>
           </div>
-          <form>
+          <form onSubmit{}>
             <submit>DELETE</submit>
           </form>
       </div>
