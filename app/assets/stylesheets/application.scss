@@ -77,6 +77,13 @@ img {
   padding-bottom: 150px;
 }
 
+.playlist-show-details-text{
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  text-align: center;
+}
+
 .playlist-show-songs{
  padding-top: 50px;
 }

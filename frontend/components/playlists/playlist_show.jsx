@@ -1,4 +1,5 @@
 import React from 'React';
+import { Link } from 'react-router-dom';
 
 class PlaylistShow extends React.Component {
 
@@ -8,7 +9,6 @@ class PlaylistShow extends React.Component {
   }
 
   render(){
-    debugger;
     let allsongs;
     let songCount;
     let countWord;

@@ -25,7 +25,6 @@ gem "binding_of_caller"
 gem "pry-rails"
 gem "annotate"
 gem "rails_12factor"
-gem 'font-awesome-less'
 
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
