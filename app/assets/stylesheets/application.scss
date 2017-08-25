@@ -44,7 +44,7 @@ img {
     height: 100vh;
     width: 100%;
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
 }
 
 .main-page > text {
@@ -55,7 +55,7 @@ img {
 .index {
   align-self: flex-start;
   width: 1175px;
-  padding-right: 25px;
+  margin-left: 220px;
 }
 
 .left-nav{
