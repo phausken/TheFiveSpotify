@@ -9,7 +9,7 @@ const App = () => {
   return (
     <div>
         <Route exact path="/" render={() => <Redirect to="/main_page" />} />
-        <ProtectedRoute path="/main_page" component={ MainPageContainer } />
+        <ProtectedRoute path="/main_page/playlists" component={ MainPageContainer } />
         <AuthRoute path="/login" component={SessionFormContainer} />
         <AuthRoute path="/signup" component={SessionFormContainer} />
     </div>

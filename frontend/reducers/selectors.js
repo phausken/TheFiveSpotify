@@ -15,4 +15,4 @@ export const getCurrentUserPlaylists = ({session, playlists}) => {
 
 export const getAllPlaylists = ({session, playlists}) => {
   return playlists;
-}
+};

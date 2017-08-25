@@ -18,6 +18,10 @@
   display: flex;
   flex-direction: column;
 }*/
+@font-face {
+
+}
+
 html {
   height: 100vh;
   width: 100%;
@@ -58,10 +62,28 @@ img {
   margin-left: 260px;
 }
 
-.left-nav{
+.playlist-show{
+  display: flex;
+  margin-left: 260px;
+  width: 1424px;
+}
+
+.playlist-show-details-container{
+  width: 475px;
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 150px;
+}
+
+.playlist-show-songs{
+ padding-top: 50px;
+}
+
+.left-nav-container{
+  display: flex;
+  flex-direction: column;
   font-family: 'Montserrat', sans-serif;
   color: #FFF;
   position: fixed;
@@ -72,13 +94,34 @@ img {
   width: 220px;
 }
 
+.left-nav{
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  padding-bottom: 150px;
+  height: 100%;
+  flex-direction: column;
+}
+
+.left-nav-top{
+  display: flex;
+  width: 172px;
+  height: 218px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.left-nav-username{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .playlist-index{
   display: flex;
   flex-wrap: wrap;
-
 }
-
-
 
 .playlist-detail{
   width: 224px;
@@ -86,9 +129,10 @@ img {
   text-align: center;
 }
 
-.playlist-detail > h6 {
-  margin-right: 20px;
+.playlist-detail-text {
+  margin-right: 17px;
 }
+
 
 .playlist-cover{
   display: flex;
@@ -100,8 +144,28 @@ img {
   box-shadow: 0 0 10px rgba(0,0,0,.3);
 }
 
+.playlist-show-cover{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 320px;
+  width: 320px;
+  background-color: #202020;
+  box-shadow: 0 0 10px rgba(0,0,0,.3);
+}
+
+.show-musical-note{
+  height: 40%;
+  width: 40%;
+  background-image: image-url('musical_note.png');
+  background-size: 100%;
+}
+
+.playlist-show-title{
+  font-size: 1.1em;
+}
+
 .musical-note{
-  color: white;
   height: 40%;
   width: 40%;
   background-image: image-url('musical_note.png');
@@ -136,13 +200,12 @@ z-index: 101
 }
 
 .big-wrap {
-  padding-top: 150px;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   background-image: image-url('spotify-background.jpg');
-  height: 100%;
+  height: 100vh;
 }
 
 .login-features{
