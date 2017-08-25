@@ -35,9 +35,6 @@ class PlaylistShow extends React.Component {
           <h6>{ songCount } { countWord }</h6>
           <h6>By { playlist.user.username }</h6>
           </div>
-          <form onSubmit{}>
-            <submit>DELETE</submit>
-          </form>
       </div>
       <div className="playlist-show-songs">
           <ol>
