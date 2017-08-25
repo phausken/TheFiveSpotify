@@ -17,7 +17,14 @@ Playlist.destroy_all
 Playlist1 = Playlist.create(name: "50s Jazz", image_url: 'img1', user_id: User1.id)
 Playlist2 = Playlist.create(name: "60s Jazz", image_url: 'img1', user_id: User2.id)
 Playlist3 = Playlist.create(name: "Ballads", image_url: 'img1', user_id: User1.id)
-
+Playlist4 = Playlist.create(name: "Bebop", image_url: 'img1', user_id: User1.id)
+Playlist5= Playlist.create(name: "Up-Tempo", image_url: 'img1', user_id: User1.id)
+Playlist6 = Playlist.create(name: "Standards", image_url: 'img1', user_id: User1.id)
+Playlist7 = Playlist.create(name: "Piano Trios", image_url: 'img1', user_id: User1.id)
+Playlist8 = Playlist.create(name: "Free Jazz", image_url: 'img1', user_id: User1.id)
+Playlist9 = Playlist.create(name: "Roma", image_url: 'img1', user_id: User1.id)
+Playlist10 = Playlist.create(name: "Fusion", image_url: 'img1', user_id: User1.id)
+Playlist11 = Playlist.create(name: "New Releases", image_url: 'img1', user_id: User1.id)
 
 Song.destroy_all
 

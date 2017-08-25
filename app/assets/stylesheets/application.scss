@@ -19,15 +19,15 @@
   flex-direction: column;
 }*/
 html {
-  height: 100%;
+  height: 100vh;
   width: 100%;
-
+  background-color: #181818;
 }
 
 
 body{
   background-image: linear-gradient(rgb(30, 51, 100), rgb(3, 6, 11) 85%);
-  height: 100%;
+  height: 100vh;
   width: 100%;
 
   font-family: 'Montserrat', sans-serif;
@@ -44,11 +44,72 @@ img {
     height: 100vh;
     width: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
+}
+
+.main-page > text {
+  color: hsla(0,0%,100%,.6);
+  transition: color .2s;
+}
+
+.index {
+  align-self: flex-start;
+  width: 1175px;
+  padding-right: 25px;
+}
+
+.left-nav{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  font-family: 'Montserrat', sans-serif;
+  color: #FFF;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  background-color: rgba(0,0,0,.5);
+  width: 220px;
+}
+
+.playlist-index{
+  display: flex;
+  flex-wrap: wrap;
 }
 
 
 
+.playlist-detail{
+  width: 190px;
+  height: 275px;
+  text-align: center;
+}
+
+.top-nav{
+  display: flex;
+  height: 90px;
+}
+
+
+.top-nav > ul {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  list-style: none;
+}
+
+
+.now-playing-container{
+background-color: #181818;
+position: fixed;
+width: 100%;
+height: 120px;
+bottom: 0;
+z-index: 101
+}
 
 .big-wrap {
   padding-top: 150px;
@@ -114,72 +175,68 @@ em{
 
 .screen-login > button {
   background-color: transparent;
-border: solid 1.5px #FFF;
-border-radius: 256px;
-color: #FFF;
-display: block;
-font-size: 13px;
-letter-spacing: .03em;
-line-height: 1.25em;
-margin: 20px auto;
-max-width: 320px;
-height: 41px;
-overflow: hidden;
-padding: 2px 15px 0;
-text-align: center;
-text-transform: uppercase;
-width: 100%;
+  border: solid 1.5px #FFF;
+  border-radius: 256px;
+  color: #FFF;
+  display: block;
+  font-size: 13px;
+  letter-spacing: .03em;
+  line-height: 1.25em;
+  margin: 20px auto;
+  max-width: 320px;
+  height: 41px;
+  overflow: hidden;
+  padding: 2px 15px 0;
+  text-align: center;
+  text-transform: uppercase;
+  width: 100%;
 }
 
-.submitform > button {
+.new-playlist-button{
+  background-color: #1db954;
+  border: none;
+  width: 150px;
+  height: 30px;
+  text-align: center;
+}
+
+ button {
   background-color: transparent;
-border: solid 1.5px #FFF;
-border-radius: 256px;
-color: #FFF;
-display: block;
-font-size: 13px;
-letter-spacing: .03em;
-line-height: 1.25em;
-margin: 20px auto;
-max-width: 320px;
-height: 41px;
-overflow: hidden;
-padding: 2px 15px 0;
-text-align: center;
-text-transform: uppercase;
-width: 100%;
+  border: solid 1.5px #FFF;
+  border-radius: 256px;
+  color: #FFF;
+  display: block;
+  font-size: 13px;
+  letter-spacing: .03em;
+  line-height: 1.25em;
+  margin: 20px auto;
+  max-width: 320px;
+  height: 41px;
+  overflow: hidden;
+  padding: 2px 15px 0;
+  text-align: center;
+  text-transform: uppercase;
+  width: 100%;
 
 }
 
 .submitform > input {
-      background-color: transparent;
-      border: 0;
-      color: #FFF;
-      font-weight: normal;
-      text-rendering: optimizeLegibility;
-      border-bottom: solid 1px #FFF;
-      height: 27px;
-      padding-top: 5px;
-      font-size: 13px;
+  background-color: transparent;
+  border: 0;
+  color: #FFF;
+  font-weight: normal;
+  text-rendering: optimizeLegibility;
+  border-bottom: solid 1px #FFF;
+  height: 27px;
+  padding-top: 5px;
+  font-size: 13px ;
 }
 
 .submitform > input:focus{
   outline: none;
 }
 
-.left-nav{
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  font-family: 'Montserrat', sans-serif;
-  color: #FFF;
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100vh;
-  background-color: rgba(0,0,0,.5);
-  width: 220px;
-}
+
 
 
 .logout {

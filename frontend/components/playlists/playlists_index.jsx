@@ -1,5 +1,5 @@
 import React from 'react';
-import PlaylistDetail from './playlist_detail';
+import PlaylistDetailContainer from './playlist_detail_container';
 
 
 class PlaylistsIndex extends React.Component {
@@ -14,10 +14,11 @@ class PlaylistsIndex extends React.Component {
 
   render(){
 
-    const allPlaylists = this.props.playlists.map((playlist) => <PlaylistDetail key={playlist.id} playlist={playlist}></PlaylistDetail>);
+    const allPlaylists = this.props.playlists.map(
+      (playlist) => <PlaylistDetailContainer key={playlist.id} playlist={playlist}/>);
 
     return(
-      <div>
+      <div className="playlist-index">
         {allPlaylists}
       </div>
     );
