@@ -18,14 +18,18 @@ class MainPage extends React.Component {
         <div className="left-nav-container">
           <div className="left-nav">
             <nav className="left-nav-top">
-              <div className ="nav-search">
+              <div className="nav-search">
                 <h3>Search</h3>
                 <div className="mag-glass"></div>
               </div>
-            <Link to='/main_page/playlists'><h3>Your Music</h3></Link>
+              <div className="left-nav-link">
+              <Link to='/main_page/playlists'><h3>Your Music</h3></Link>
+              </div>
             </nav>
-            <nav className="left-nav-username">
+            <nav className="left-nav-username-container">
+              <div className="left-nav-username">
               < UsernameContainer />
+              </div>
             </nav>
             </div>
           </div>

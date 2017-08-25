@@ -120,9 +120,18 @@ img {
 }
 
 .left-nav-username{
+  border-top: 1px #FFF solid;
   display: flex;
-  align-items: center;
-  justify-content: center;
+}
+
+.left-nav-link{
+  border-top: 1px #FFF solid;
+  width: 100%;
+}
+
+.nav-search{
+  border-top: 1px #FFF solid;
+  width: 100%;
 }
 
 .playlist-index{
