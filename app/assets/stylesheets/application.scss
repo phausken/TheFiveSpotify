@@ -54,8 +54,8 @@ img {
 
 .index {
   align-self: flex-start;
-  width: 1175px;
-  margin-left: 220px;
+  width: 1424px;
+  margin-left: 260px;
 }
 
 .left-nav{
@@ -75,15 +75,39 @@ img {
 .playlist-index{
   display: flex;
   flex-wrap: wrap;
+
 }
 
 
 
 .playlist-detail{
-  width: 190px;
-  height: 275px;
+  width: 224px;
+  height: 321px;
   text-align: center;
 }
+
+.playlist-detail > h6 {
+  margin-right: 20px;
+}
+
+.playlist-cover{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  width: 200px;
+  background-color: #202020;
+  box-shadow: 0 0 10px rgba(0,0,0,.3);
+}
+
+.musical-note{
+  color: white;
+  height: 40%;
+  width: 40%;
+  background-image: image-url('musical_note.png');
+  background-size: 100%;
+}
+
 
 .top-nav{
   display: flex;

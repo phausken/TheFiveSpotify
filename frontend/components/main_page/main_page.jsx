@@ -1,7 +1,9 @@
 import React from 'react';
 import UsernameContainer from '../username/username_container';
 import PlaylistsIndexContainer from '../playlists/playlists_index_container';
+import PlaylistShowContainer from '../playlists/playlist_show_container';
 import { fetchPlaylists } from '../../actions/playlist_actions';
+import { Route, Switch } from 'react-router-dom';
 
 
 class MainPage extends React.Component {
@@ -16,19 +18,11 @@ class MainPage extends React.Component {
        <nav className="left-nav">
          < UsernameContainer />
         </nav>
-        <div className="index">
-          <nav className="top-nav">
-            <ul>
-              <li>Playlists</li>
-              <li>Songs</li>
-              <li>Artists</li>
-              <li><button className="new-playlist-button">NEW PLAYLIST</button></li>
-            </ul>
-          </nav>
-          < PlaylistsIndexContainer />
-        </div>
+      <Switch>
+        <Route exact path='/main_page/playlists' component={PlaylistsIndexContainer} />
+        <Route path='/main_page/playlists/:playlistId' component={PlaylistShowContainer} />
+      </Switch>
         <div className="now-playing-container">
-          <nav></nav>
         </div>
       </div>
     );
