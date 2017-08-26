@@ -2,9 +2,19 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 class PlaylistShow extends React.Component {
+  constructor(props){
+    super(props);
+
+    this.handleDelete = this.handleDelete.bind(this);
+  }
+
+  handleDelete(e){
+    const id = this.props.playlistId;
+    this.props.deletePlaylist(id);
+  }
 
   componentDidMount(){
-    this.props.requestPlaylists().then(
+    this.props.requestPlaylists().then((res) =>
     this.props.requestPlaylist(this.props.playlistId));
   }
 
@@ -12,6 +22,7 @@ class PlaylistShow extends React.Component {
     let allsongs;
     let songCount;
     let countWord;
+    const playlistId = this.props.playlistId;
     const playlist = this.props.playlists[this.props.playlistId];
     if (playlist.songs){
      allsongs = playlist.songs.map((song) => {return <li>{song.title} by ~Artist~</li>;});
@@ -30,10 +41,13 @@ class PlaylistShow extends React.Component {
         <div className="playlist-show-cover">
           <div className="show-musical-note"></div>
         </div>
-        <div className="playlist-show-details-text">
-          <h6 className="playlist-show-title">{ playlist.name }</h6>
-          <h6>{ songCount } { countWord }</h6>
-          <h6>By { playlist.user.username }</h6>
+          <div className="playlist-show-details-text">
+            <h6 className="playlist-show-title">{ playlist.name }</h6>
+            <h6>{ songCount } { countWord }</h6>
+            <h6>By { playlist.user.username }</h6>
+            <form onSubmit={ this.handleDelete }>
+              <Link onClick={ this.handleDelete } to='/main_page/playlists'>DELETE</Link>
+              </form>
           </div>
       </div>
       <div className="playlist-show-songs">
