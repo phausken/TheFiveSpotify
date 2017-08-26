@@ -1,5 +1,6 @@
 import React from 'react';
 import PlaylistDetailContainer from './playlist_detail_container';
+import TopNav from '../main_page/top_nav';
 
 
 class PlaylistsIndex extends React.Component {
@@ -19,14 +20,9 @@ class PlaylistsIndex extends React.Component {
 
     return(
       <div className="index">
-        <nav className="top-nav">
-          <ul>
-            <li>Playlists</li>
-            <li>Songs</li>
-            <li>Artists</li>
-            <li><button className="new-playlist-button">NEW PLAYLIST</button></li>
-          </ul>
-        </nav>
+        <div className="top-nav">
+      < TopNav />
+      </div>
       <div className="playlist-index">
         {allPlaylists}
       </div>
