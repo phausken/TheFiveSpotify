@@ -1,9 +1,14 @@
 import React from 'react';
+import Song from '../songs/song';
 import { Link } from 'react-router-dom';
 
 class PlaylistShow extends React.Component {
   constructor(props){
     super(props);
+    this.state = {
+      playlistName: "",
+      username: "",
+    };
 
     this.handleDelete = this.handleDelete.bind(this);
   }
@@ -19,22 +24,24 @@ class PlaylistShow extends React.Component {
   }
 
   render(){
+    debugger;
     let allsongs;
     let songCount;
     let countWord;
     const playlistId = this.props.playlistId;
     const playlist = this.props.playlists[this.props.playlistId];
-    if (playlist.songs){
-     allsongs = playlist.songs.map((song) => {return <li>{song.title} by ~Artist~</li>;});
-      songCount = playlist.songs.length;
-    }
+    if (playlist){
+      if (playlist.songs){
+       allsongs = playlist.songs.map((song) => {return <li><Song key={song.id } song={song}/></li>;});
+        songCount = playlist.songs.length;
+      }
 
-    if (songCount === 1){
-      countWord = 'song'
-    } else {
-      countWord = 'songs'
+      if (songCount === 1){
+        countWord = 'song';
+      } else {
+        countWord = 'songs';
+      }
     }
-
     return(
     <div className="playlist-show">
       <div className="playlist-show-details-container">

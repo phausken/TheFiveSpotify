@@ -3,7 +3,7 @@ import UsernameContainer from '../username/username_container';
 import PlaylistsIndexContainer from '../playlists/playlists_index_container';
 import PlaylistShowContainer from '../playlists/playlist_show_container';
 import { fetchPlaylists } from '../../actions/playlist_actions';
-import { Route, Switch, Link } from 'react-router-dom';
+import { Route, Switch, Link, NavLink } from 'react-router-dom';
 
 
 class MainPage extends React.Component {
@@ -23,7 +23,7 @@ class MainPage extends React.Component {
                 <div className="mag-glass"></div>
               </div>
               <div className="left-nav-link">
-              <Link to='/main_page/playlists'><h3>Your Music</h3></Link>
+              <NavLink to='/main_page/playlists' activeStyle={{color: '#1db954'}} ><h3>Your Music</h3></NavLink>
               </div>
             </nav>
             <nav className="left-nav-username-container">

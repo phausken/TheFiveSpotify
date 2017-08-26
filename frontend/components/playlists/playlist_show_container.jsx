@@ -6,7 +6,8 @@ import { getAllPlaylists } from '../../reducers/selectors';
 
 
 const mapStateToProps = (state, ownProps) => {
-  const playlistId = parseInt(ownProps.location.pathname.slice(21, 23));
+
+  const playlistId = parseInt(ownProps.match.params.playlistId);
   return {
     playlists: getAllPlaylists(state),
     playlistId,

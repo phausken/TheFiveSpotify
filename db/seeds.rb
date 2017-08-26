@@ -26,12 +26,19 @@ Playlist9 = Playlist.create(name: "Roma", image_url: 'img1', user_id: User1.id)
 Playlist10 = Playlist.create(name: "Fusion", image_url: 'img1', user_id: User1.id)
 Playlist11 = Playlist.create(name: "New Releases", image_url: 'img1', user_id: User1.id)
 
+
+Artist.destroy_all
+
+Artist1 = Artist.create(name: "Miles Davis", image_url: 'img2')
+Artist2 = Artist.create(name: "John Coltrane", image_url: 'img2')
+Artist3 = Artist.create(name: "Charlie Parker", image_url: 'img3')
+
 Song.destroy_all
 
-Song1 = Song.create(title: "So What")
-Song2 = Song.create(title: "Moments Notice")
-Song3 = Song.create(title: "Freedom Jazz Dance")
-Song4 = Song.create(title: "Ascension")
+Song1 = Song.create(title: "So What", artist_id: Artist1.id)
+Song2 = Song.create(title: "Moments Notice", artist_id: Artist2.id)
+Song3 = Song.create(title: "Freedom Jazz Dance", artist_id: Artist1.id)
+Song4 = Song.create(title: "Ascension", artist_id: Artist2.id)
 
 PlaylistAdd.destroy_all
 

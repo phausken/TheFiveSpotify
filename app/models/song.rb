@@ -6,5 +6,5 @@ class Song < ActiveRecord::Base
     foreign_key: :song_id,
     through: :playlist_adds
 
-
+  belongs_to :artist
 end
