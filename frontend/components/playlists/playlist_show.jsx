@@ -1,6 +1,7 @@
 import React from 'react';
 import Song from '../songs/song';
 import { Link } from 'react-router-dom';
+import SongIndexContainer from '../songs/song_index_container';
 
 class PlaylistShow extends React.Component {
   constructor(props){
@@ -24,7 +25,7 @@ class PlaylistShow extends React.Component {
   }
 
   render(){
-    debugger;
+  
     let allsongs;
     let songCount;
     let countWord;

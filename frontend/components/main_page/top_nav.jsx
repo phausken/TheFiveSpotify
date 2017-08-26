@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class TopNav extends React.Component {
 
@@ -9,8 +10,8 @@ class TopNav extends React.Component {
 
       <nav className="top-nav">
         <ul>
-          <li>Playlists</li>
-          <li>Songs</li>
+          <li><Link to='/main_page/playlists'>Playlists</Link></li>
+          <li><Link to='/main_page/songs'>Songs</Link></li>
           <li>Artists</li>
           <li><button className="new-playlist-button">NEW PLAYLIST</button></li>
         </ul>

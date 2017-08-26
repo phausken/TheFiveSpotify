@@ -1,6 +1,6 @@
 export const fetchSongs = () => {
   return $.ajax({
-    url: 'api/playlists',
+    url: 'api/songs',
     method: 'GET',
   });
 };
