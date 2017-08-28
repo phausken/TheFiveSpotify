@@ -45,7 +45,7 @@ class TopNav extends React.Component {
   }
 
   render() {
-    debugger;
+
     return(
       <nav className="top-nav">
         <ul>
@@ -68,10 +68,7 @@ class TopNav extends React.Component {
                id='name'
                onChange={this.handleChange('name')}
                value={this.state.name}/>
-             <input
-               type='hidden'
-               value={this.props.currentId}/  >
-              <button>Add Playlist</button>
+             <Link to="/main_page/playlists"><button>Add Playlist</button></Link>
             </form>
           </div>
           <Link to="/main_page/playlists"><button onClick={ this.handleClose }>CANCEL</button></Link>
