@@ -1,8 +1,9 @@
 import { connect } from 'react-redux';
 import PlaylistShow from './playlist_show';
 import { fetchPlaylist, fetchPlaylists, deletePlaylist } from '../../actions/playlist_actions';
+import { fetchSongs } from '../../actions/song_actions';
 import { withRouter } from 'react-router-dom';
-import { getAllPlaylists } from '../../reducers/selectors';
+import { getAllPlaylists, getAllSongs } from '../../reducers/selectors';
 
 
 const mapStateToProps = (state, ownProps) => {
@@ -11,6 +12,7 @@ const mapStateToProps = (state, ownProps) => {
   return {
     playlists: getAllPlaylists(state),
     playlistId,
+    songs: getAllSongs(state),
   };
 };
 
@@ -19,6 +21,7 @@ const mapDispatchToProps = (dispatch) => {
     requestPlaylists: () => dispatch(fetchPlaylists()),
     requestPlaylist: (id) => dispatch(fetchPlaylist(id)),
     deletePlaylist: (id) => dispatch(deletePlaylist(id)),
+    requestSongs: () => dispatch(fetchSongs()),
   };
 };
 

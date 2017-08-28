@@ -4,6 +4,6 @@ json.set!(@playlist.id) do
     json.array!(@playlist.songs.ids)
   end
   json.songs do
-    json.array!(@playlist.songs)
+    json.array!(@playlist.songs, :id, :title, :artist)
   end
 end

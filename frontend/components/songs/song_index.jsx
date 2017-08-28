@@ -1,5 +1,6 @@
 import React from 'react';
-import TopNav from '../main_page/top_nav';
+import TopNavContainer from '../main_page/top_nav_container';
+import Song from './song';
 
 class SongIndex extends React.Component {
   constructor(props){
@@ -13,12 +14,20 @@ class SongIndex extends React.Component {
 
   render() {
     debugger;
-    return(
-      <div>
-        < TopNav />
-        <h1>Test!</h1>
+    let songArray = Object.values(this.props.songs);
+    const allSongs = songArray.map((song) => <li><Song key={song.id} song={ song } /></li>);
 
+
+    return(
+
+      <div className="index">
+        < TopNavContainer />
+        <div>
+          <ul>
+            {allSongs}
+          </ul>
         </div>
+      </div>
     );
   }
 
