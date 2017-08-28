@@ -6,10 +6,7 @@ import SongIndexContainer from '../songs/song_index_container';
 class PlaylistShow extends React.Component {
   constructor(props){
     super(props);
-    this.state = {
-      playlistName: "",
-      username: "",
-    };
+
 
     this.handleDelete = this.handleDelete.bind(this);
   }
@@ -30,20 +27,19 @@ class PlaylistShow extends React.Component {
     let allsongs;
     let songCount;
     let countWord;
-    const playlistId = this.props.playlistId;
-    const playlist = this.props.playlists[this.props.playlistId];
-    if (playlist){
-      if (playlist.songs){
-       allsongs = playlist.songs.map((song) => {return <li><SongContainer key={ song.id } playlistId={ this.props.playlistId } removable={ true } song={ song }/></li>;});
-        songCount = playlist.songs.length;
-      }
+    const playlistId = this.props.playlistId || {};
+    const playlist = this.props.playlists[this.props.playlistId] || {name: "", songs: [""], user: {username: ""}};
+    let songs = playlist.songs || [];
+    allsongs = songs.map((song) => {return <li><SongContainer key={ song.id } playlistId={ this.props.playlistId } removable={ true } song={ song }/></li>;});
+    songCount = songs.length;
+
 
       if (songCount === 1){
         countWord = 'song';
       } else {
         countWord = 'songs';
       }
-    }
+
     return(
     <div className="playlist-show">
       <div className="playlist-show-details-container">

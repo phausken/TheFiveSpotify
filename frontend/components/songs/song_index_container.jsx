@@ -1,16 +1,19 @@
 import { connect } from 'react-redux';
 import SongIndex from './song_index';
 import { fetchSongs } from '../../actions/song_actions';
+import { fetchPlaylists } from '../../actions/playlist_actions';
 
-const mapStatetoProps = ({songs}) => {
+const mapStatetoProps = ({songs, playlists}) => {
   return {
-    songs
+    songs,
+    playlists
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    requestSongs: () => dispatch(fetchSongs())
+    requestSongs: () => dispatch(fetchSongs()),
+    requestPlaylists: () => dispatch(fetchPlaylists())
   };
 };
 

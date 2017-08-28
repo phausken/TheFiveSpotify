@@ -15,8 +15,10 @@ class SongIndex extends React.Component {
 
   }
 
+
   handleOpen(e){
     e.preventDefault();
+    this.props.requestPlaylists();
     this.setState({
       modalOpen: true,
     });
@@ -31,13 +33,21 @@ class SongIndex extends React.Component {
 
   componentDidMount(){
     this.props.requestSongs();
+    this.props.requestPlaylists();
+  }
+
+  handleClick(playlistId, songId) {
+    return (e) => {
+      console.log('some stuff');
+    }
   }
 
   render() {
-
+    debugger;
     let songArray = Object.values(this.props.songs);
+    let playlistArray = Object.values(this.props.playlists);
     const allSongs = songArray.map((song) => <li><SongContainer key={song.id} song={ song } /><button onClick={this.handleOpen}>Add to Playlist</button></li>);
-
+    const allPlaylists = playlistArray.map((playlist) => <li onClick={this.handleClick}>{ playlist.name }</li>);
 
     return(
 
@@ -55,8 +65,12 @@ class SongIndex extends React.Component {
           className="add-playlist-modal"
           overlayClassName="add-playlist-overlay"
           >
-          <h1>Test!</h1>
-          <button onClick={this.handleClose}></button>
+
+
+          <ul>
+            { allPlaylists }
+          </ul>
+          <button onClick={this.handleClose}>CANCEL</button>
         </Modal>
       </div>
 
