@@ -19,11 +19,10 @@ class PlaylistShow extends React.Component {
   componentDidMount(){
     this.props.requestPlaylists().then((res) =>
     this.props.requestPlaylist(this.props.playlistId));
-    this.props.requestSongs();
   }
 
   render(){
-  
+    debugger;
     let allsongs;
     let songCount;
     let countWord;

@@ -10,8 +10,8 @@ const playlistReducer = (state = {}, action) => {
     case RECEIVE_PLAYLISTS:
       return action.playlists;
     case RECEIVE_PLAYLIST:
-      const newPlaylist = action.playlist
-      return merge({}, state, newPlaylist);
+      const newPlaylist = action.playlist;
+      return Object.assign({}, state, newPlaylist);
     default:
       return state;
     }

@@ -8,21 +8,28 @@ class SongIndex extends React.Component {
     super(props);
     this.state = {
       modalOpen: false,
+      song_id: "",
+      playlist_id: "",
     };
 
     this.handleOpen = this.handleOpen.bind(this);
     this.handleClose  = this.handleClose.bind(this);
-
+    this.handleSelect = this.handleSelect.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
 
-  handleOpen(e){
+  handleOpen(songId){
+  return (e) => {
     e.preventDefault();
     this.props.requestPlaylists();
     this.setState({
       modalOpen: true,
-    });
+      song_id: songId,
+      });
+    };
   }
+
 
   handleClose(e){
     e.preventDefault();
@@ -36,18 +43,33 @@ class SongIndex extends React.Component {
     this.props.requestPlaylists();
   }
 
-  handleClick(playlistId, songId) {
+  handleSelect(playlistId){
     return (e) => {
-      console.log('some stuff');
-    }
+      e.preventDefault();
+      this.setState({
+        playlist_id: playlistId
+      });
+    };
+  }
+
+  handleSubmit(e) {
+    e.preventDefault();
+    let playlistAdd = Object.assign({}, this.state);
+    delete(playlistAdd.modalOpen);
+    this.props.createPlaylistAdd(playlistAdd);
+    this.setState({
+      song_id: "",
+      playlist_id: "",
+      modalOpen: false,
+    });
   }
 
   render() {
-    debugger;
+
     let songArray = Object.values(this.props.songs);
     let playlistArray = Object.values(this.props.playlists);
-    const allSongs = songArray.map((song) => <li><SongContainer key={song.id} song={ song } /><button onClick={this.handleOpen}>Add to Playlist</button></li>);
-    const allPlaylists = playlistArray.map((playlist) => <li onClick={this.handleClick}>{ playlist.name }</li>);
+    const allSongs = songArray.map((song) => <li><SongContainer key={song.id} song={ song } /><button onClick={this.handleOpen(song.id)}>Add to Playlist</button></li>);
+    const allPlaylists = playlistArray.map((playlist) => <li onClick={this.handleSelect(playlist.id)}>{ playlist.name }</li>);
 
     return(
 
@@ -70,6 +92,7 @@ class SongIndex extends React.Component {
           <ul>
             { allPlaylists }
           </ul>
+          <button onClick={this.handleSubmit}>SUBMIT</button>
           <button onClick={this.handleClose}>CANCEL</button>
         </Modal>
       </div>
