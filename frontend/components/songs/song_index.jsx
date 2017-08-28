@@ -1,6 +1,6 @@
 import React from 'react';
 import TopNavContainer from '../main_page/top_nav_container';
-import Song from './song';
+import SongContainer from './song_container';
 import Modal from 'react-modal';
 
 class SongIndex extends React.Component {
@@ -36,7 +36,7 @@ class SongIndex extends React.Component {
   render() {
 
     let songArray = Object.values(this.props.songs);
-    const allSongs = songArray.map((song) => <li><Song key={song.id} song={ song } /><button onClick={this.handleOpen}>Add to Playlist</button></li>);
+    const allSongs = songArray.map((song) => <li><SongContainer key={song.id} song={ song } /><button onClick={this.handleOpen}>Add to Playlist</button></li>);
 
 
     return(
@@ -56,7 +56,7 @@ class SongIndex extends React.Component {
           overlayClassName="add-playlist-overlay"
           >
           <h1>Test!</h1>
-          <button onClick={this.handleClose}>CLOSE</button>
+          <button onClick={this.handleClose}></button>
         </Modal>
       </div>
 

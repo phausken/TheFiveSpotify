@@ -45,7 +45,7 @@ class TopNav extends React.Component {
   }
 
   render() {
-
+  
     return(
       <nav className="top-nav">
         <ul>

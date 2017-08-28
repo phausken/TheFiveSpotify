@@ -1,5 +1,5 @@
 import React from 'react';
-import Song from '../songs/song';
+import SongContainer from '../songs/song_container';
 import { Link } from 'react-router-dom';
 import SongIndexContainer from '../songs/song_index_container';
 
@@ -26,7 +26,7 @@ class PlaylistShow extends React.Component {
   }
 
   render(){
-    debugger;
+  
     let allsongs;
     let songCount;
     let countWord;
@@ -34,7 +34,7 @@ class PlaylistShow extends React.Component {
     const playlist = this.props.playlists[this.props.playlistId];
     if (playlist){
       if (playlist.songs){
-       allsongs = playlist.songs.map((song) => {return <li><Song key={song.id } song={song}/></li>;});
+       allsongs = playlist.songs.map((song) => {return <li><SongContainer key={ song.id } playlistId={ this.props.playlistId } removable={ true } song={ song }/></li>;});
         songCount = playlist.songs.length;
       }
 
