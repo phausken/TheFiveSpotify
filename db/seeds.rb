@@ -25,6 +25,7 @@ Playlist8 = Playlist.create(name: "Free Jazz", image_url: 'img1', user_id: User1
 Playlist9 = Playlist.create(name: "Roma", image_url: 'img1', user_id: User1.id)
 Playlist10 = Playlist.create(name: "Fusion", image_url: 'img1', user_id: User1.id)
 Playlist11 = Playlist.create(name: "New Releases", image_url: 'img1', user_id: User1.id)
+Playlist12 = Playlist.create(name: "Blues", image_url: 'img2', user_id: User1.id)
 
 
 Artist.destroy_all

@@ -1,0 +1,2 @@
+module PlaylistAddsHelper
+end

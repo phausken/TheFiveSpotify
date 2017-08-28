@@ -45,6 +45,7 @@ class TopNav extends React.Component {
   }
 
   render() {
+    debugger;
     return(
       <nav className="top-nav">
         <ul>
@@ -73,7 +74,7 @@ class TopNav extends React.Component {
               <button>Add Playlist</button>
             </form>
           </div>
-          <button onClick={ this.handleClose }>CANCEL</button>
+          <Link to="/main_page/playlists"><button onClick={ this.handleClose }>CANCEL</button></Link>
         </Modal>
       </nav>
 
