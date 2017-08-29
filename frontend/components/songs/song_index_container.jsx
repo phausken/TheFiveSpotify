@@ -4,6 +4,7 @@ import { fetchSongs } from '../../actions/song_actions';
 import { fetchPlaylists } from '../../actions/playlist_actions';
 import { createPlaylistAdd } from '../../actions/playlist_adds_actions';
 import { getCurrentUserPlaylists } from '../../reducers/selectors';
+import { receiveCurrentSong } from '../../actions/ui_actions';
 
 const mapStatetoProps = (state) => {
   return {
@@ -16,7 +17,7 @@ const mapDispatchToProps = (dispatch) => {
   return {
     requestSongs: () => dispatch(fetchSongs()),
     requestPlaylists: () => dispatch(fetchPlaylists()),
-    createPlaylistAdd: (playlistAdd) => dispatch(createPlaylistAdd(playlistAdd))
+    createPlaylistAdd: (playlistAdd) => dispatch(createPlaylistAdd(playlistAdd)),
   };
 };
 

@@ -6,8 +6,6 @@ import { fetchSongs } from '../../actions/song_actions';
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    requestPlaylists: () => dispatch(fetchPlaylists()),
-    requestUsers: () => dispatch(fetchUsers()),
     requestSongs: () => dispatch(fetchSongs()),
   };
 };

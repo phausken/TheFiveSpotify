@@ -4,6 +4,7 @@ import { fetchPlaylist, fetchPlaylists, deletePlaylist } from '../../actions/pla
 import { fetchSongs } from '../../actions/song_actions';
 import { withRouter } from 'react-router-dom';
 import { getAllPlaylists, getAllSongs } from '../../reducers/selectors';
+import { receiveCurrentPlaylist } from '../../actions/ui_actions';
 
 
 const mapStateToProps = (state, ownProps) => {
@@ -21,7 +22,7 @@ const mapDispatchToProps = (dispatch) => {
     requestPlaylists: () => dispatch(fetchPlaylists()),
     requestPlaylist: (id) => dispatch(fetchPlaylist(id)),
     deletePlaylist: (id) => dispatch(deletePlaylist(id)),
-    requestSongs: () => dispatch(fetchSongs()),
+    receiveCurrentPlaylist: (playlist) => dispatch(receiveCurrentPlaylist(playlist)),
   };
 };
 

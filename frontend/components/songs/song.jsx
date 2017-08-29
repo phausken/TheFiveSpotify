@@ -5,6 +5,7 @@ class Song extends React.Component {
     super(props);
 
     this.handleDelete = this.handleDelete.bind(this);
+    this.handleDoubleClick = this.handleDoubleClick.bind(this);
   }
 
   handleDelete(e){
@@ -14,6 +15,12 @@ class Song extends React.Component {
       song_id: this.props.song.id,
     });
   }
+
+  handleDoubleClick(e){
+    e.preventDefault();
+    this.props.receiveCurrentSong(this.props.song);
+  }
+
 
 
   render(){
@@ -28,7 +35,7 @@ class Song extends React.Component {
 
     return(
 
-    <div className="song-listing">
+    <div onDoubleClick={ this.handleDoubleClick } className="song-listing">
       <div className="song-listing-info">
         <h6 className="song-listing-title">{ song.title }</h6>
         <h6 className="song-listing-artist">{ song.artist.name }</h6>

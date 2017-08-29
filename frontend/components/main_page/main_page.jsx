@@ -10,7 +10,7 @@ import { Route, Switch, Link, NavLink } from 'react-router-dom';
 class MainPage extends React.Component {
 
   componentDidMount(){
-    this.props.requestUsers();
+    this.props.requestSongs();
   }
 
   render() {
