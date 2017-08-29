@@ -36,10 +36,10 @@ Artist3 = Artist.create(name: "Charlie Parker", image_url: 'img3')
 
 Song.destroy_all
 
-Song1 = Song.create(title: "So What", artist_id: Artist1.id)
-Song2 = Song.create(title: "Moments Notice", artist_id: Artist2.id)
-Song3 = Song.create(title: "Freedom Jazz Dance", artist_id: Artist1.id)
-Song4 = Song.create(title: "Ascension", artist_id: Artist2.id)
+Song1 = Song.create(title: "So What", artist_id: Artist1.id, url: "url1", status: "")
+Song2 = Song.create(title: "Moments Notice", artist_id: Artist2.id, url: "url1", status: "")
+Song3 = Song.create(title: "Freedom Jazz Dance", artist_id: Artist1.id, url: "url1", status: "")
+Song4 = Song.create(title: "Ascension", artist_id: Artist2.id, url: "url1", status: "")
 
 PlaylistAdd.destroy_all
 
