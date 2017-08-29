@@ -4,9 +4,11 @@ import { fetchPlaylists } from '../../actions/playlist_actions';
 import { getCurrentUserPlaylists } from '../../reducers/selectors';
 
 const mapStateToProps = (state) => {
-  return {
+
+  const userPlaylists = {
     playlists: getCurrentUserPlaylists(state),
   };
+  return userPlaylists;
 };
 
 const mapDispatchToProps = (dispatch) => {

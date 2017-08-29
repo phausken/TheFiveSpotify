@@ -36,7 +36,7 @@ class Api::PlaylistsController < ApplicationController
     @playlist = Playlist.find(params[:id])
     if @playlist
       @playlist.delete
-      render json: "{}"
+      render json: @playlist
     else
       render json: @playlist.errors.full_messages, status: 422
     end

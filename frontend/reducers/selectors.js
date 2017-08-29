@@ -1,12 +1,13 @@
 export const getCurrentUserPlaylists = ({session, playlists}) => {
 
-  let matchIds = session.currentUser.playlist_ids;
+  let currentUserId = session.currentUser.id;
   let playlistIds = Object.keys(playlists).map(id => parseInt(id));
+  let playlistsValues = Object.values(playlists);
   let result = [];
 
   for (let i = 0; i < playlistIds.length; i++){
-    if (matchIds.includes(playlistIds[i])){
-      result.push(playlists[playlistIds[i]]);
+    if (  playlistsValues[i].user_id === currentUserId ){
+      result.push(playlistsValues[i]);
     }
   }
 

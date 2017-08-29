@@ -24,6 +24,7 @@ class TopNav extends React.Component {
   }
 
   handleSubmit(e) {
+
     e.preventDefault();
     const playlist = Object.assign({}, this.state);
     this.props.processForm(playlist);
@@ -45,7 +46,7 @@ class TopNav extends React.Component {
   }
 
   render() {
-  
+
     return(
       <nav className="top-nav">
         <ul>
@@ -61,17 +62,17 @@ class TopNav extends React.Component {
           overlayClassName="add-playlist-overlay"
           contentLabel="add playlist">
           <div>
-            <form onSubmit={ this.handleSubmit }>
+            <form className="add-playlist-form">
              <label>Playlist Name</label>
              <input
                type='text'
                id='name'
                onChange={this.handleChange('name')}
                value={this.state.name}/>
-             <Link to="/main_page/playlists"><button>Add Playlist</button></Link>
+             <button onClick={this.handleSubmit }>Add Playlist</button>
             </form>
           </div>
-          <Link to="/main_page/playlists"><button onClick={ this.handleClose }>CANCEL</button></Link>
+          <button onClick={ this.handleClose }>CANCEL</button>
         </Modal>
       </nav>
 

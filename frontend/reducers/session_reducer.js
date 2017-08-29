@@ -1,4 +1,5 @@
 import { RECEIVE_CURRENT_USER, RECEIVE_ERRORS, CLEAR_ERRORS } from '../actions/session_actions';
+import {RECEIVE_PLAYLIST } from '../actions/playlist_actions';
 import { merge } from 'lodash';
 
 const nullUser = {
@@ -16,6 +17,8 @@ const sessionReducer = (state = nullUser, action) => {
       return merge({}, state, { errors: action.errors, });
     case CLEAR_ERRORS:
       return Object.assign({}, state, { errors: [],});
+    case RECEIVE_PLAYLIST:
+        console.log(action.type)
     default:
       return state;
 

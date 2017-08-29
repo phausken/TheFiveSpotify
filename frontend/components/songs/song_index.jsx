@@ -10,12 +10,14 @@ class SongIndex extends React.Component {
       modalOpen: false,
       song_id: "",
       playlist_id: "",
+      selected: null,
     };
 
     this.handleOpen = this.handleOpen.bind(this);
     this.handleClose  = this.handleClose.bind(this);
     this.handleSelect = this.handleSelect.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.checkSelected = this.checkSelected.bind(this);
   }
 
 
@@ -43,24 +45,35 @@ class SongIndex extends React.Component {
     this.props.requestPlaylists();
   }
 
-  handleSelect(playlistId){
+  handleSelect(playlistId, index){
     return (e) => {
       e.preventDefault();
       this.setState({
-        playlist_id: playlistId
+        playlist_id: playlistId,
+        selected: index,
       });
     };
+  }
+
+  checkSelected(index){
+    if ( this.state.selected === index ){
+      return "add-playlist-modal-selected";
+    } else {
+      return "";
+    }
   }
 
   handleSubmit(e) {
     e.preventDefault();
     let playlistAdd = Object.assign({}, this.state);
     delete(playlistAdd.modalOpen);
+    delete(playlistAdd.selected);
     this.props.createPlaylistAdd(playlistAdd);
     this.setState({
       song_id: "",
       playlist_id: "",
       modalOpen: false,
+      selected: null,
     });
   }
 
@@ -69,7 +82,7 @@ class SongIndex extends React.Component {
     let songArray = Object.values(this.props.songs);
     let playlistArray = Object.values(this.props.playlists);
     const allSongs = songArray.map((song, index) => <li className="song-index-listing"><SongContainer key={song.id} song={ song } /><a onClick={this.handleOpen(song.id)}>Add to Playlist</a></li>);
-    const allPlaylists = playlistArray.map((playlist) => <li onClick={this.handleSelect(playlist.id)}>{ playlist.name }</li>);
+    const allPlaylists = playlistArray.map((playlist, index) => <li className="add-playlist-listing" onClick={this.handleSelect(playlist.id, index)}><h5 className={ this.checkSelected(index) }>{ playlist.name }</h5></li>);
 
     return(
 
@@ -89,7 +102,7 @@ class SongIndex extends React.Component {
           >
 
 
-          <ul>
+          <ul className="add-playlist-list">
             { allPlaylists }
           </ul>
           <button onClick={this.handleSubmit}>SUBMIT</button>

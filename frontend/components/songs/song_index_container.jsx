@@ -3,11 +3,12 @@ import SongIndex from './song_index';
 import { fetchSongs } from '../../actions/song_actions';
 import { fetchPlaylists } from '../../actions/playlist_actions';
 import { createPlaylistAdd } from '../../actions/playlist_adds_actions';
+import { getCurrentUserPlaylists } from '../../reducers/selectors';
 
-const mapStatetoProps = ({songs, playlists}) => {
+const mapStatetoProps = (state) => {
   return {
-    songs,
-    playlists
+    songs: state.songs,
+    playlists: getCurrentUserPlaylists(state)
   };
 };
 
