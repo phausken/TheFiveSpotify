@@ -68,7 +68,7 @@ class SongIndex extends React.Component {
 
     let songArray = Object.values(this.props.songs);
     let playlistArray = Object.values(this.props.playlists);
-    const allSongs = songArray.map((song, index) => <li><SongContainer key={song.id} song={ song } /><button onClick={this.handleOpen(song.id)}>Add to Playlist</button></li>);
+    const allSongs = songArray.map((song, index) => <li className="song-index-listing"><SongContainer key={song.id} song={ song } /><a onClick={this.handleOpen(song.id)}>Add to Playlist</a></li>);
     const allPlaylists = playlistArray.map((playlist) => <li onClick={this.handleSelect(playlist.id)}>{ playlist.name }</li>);
 
     return(

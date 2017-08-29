@@ -30,7 +30,7 @@ html {
 
 
 body{
-  background-image: linear-gradient(rgb(30, 51, 100), rgb(3, 6, 11) 95%);
+  background-image: linear-gradient(rgb(30, 51, 100), rgb(3, 6, 11));
   height: 100vh;
   width: 100%;
 
@@ -114,7 +114,12 @@ img {
   font-size: 14px;
 }
 
-
+.song-index-listing{
+  display: flex;
+  justify-content: space-between;
+  padding-top: 3px;
+  padding-bottom: 3px;
+}
 
 .left-nav-container{
   display: flex;
