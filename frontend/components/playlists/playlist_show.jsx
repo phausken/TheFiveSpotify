@@ -22,14 +22,14 @@ class PlaylistShow extends React.Component {
   }
 
   render(){
-    debugger;
+
     let allsongs;
     let songCount;
     let countWord;
     const playlistId = this.props.playlistId || {};
     const playlist = this.props.playlists[this.props.playlistId] || {name: "", songs: [""], user: {username: ""}};
     let songs = playlist.songs || [];
-    allsongs = songs.map((song) => {return <li><SongContainer key={ song.id } playlistId={ this.props.playlistId } removable={ true } song={ song }/></li>;});
+    allsongs = songs.map((song) => {return <li className="song-list"><SongContainer key={ song.id } playlistId={ this.props.playlistId } removable={ true } song={ song }/></li>;});
     songCount = songs.length;
 
 
@@ -47,8 +47,8 @@ class PlaylistShow extends React.Component {
         </div>
           <div className="playlist-show-details-text">
             <h6 className="playlist-show-title">{ playlist.name }</h6>
-            <h6>{ songCount } { countWord }</h6>
-            <h6>By { playlist.user.username }</h6>
+            <h6 className="playlist-detail-text-h6">By { playlist.user.username }</h6>
+            <h6 className="playlist-detail-text-h6">{ songCount } { countWord }</h6>
             <form onSubmit={ this.handleDelete }>
               <Link onClick={ this.handleDelete } to='/main_page/playlists'>DELETE</Link>
               </form>

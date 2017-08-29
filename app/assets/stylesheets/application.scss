@@ -30,7 +30,7 @@ html {
 
 
 body{
-  background-image: linear-gradient(rgb(30, 51, 100), rgb(3, 6, 11) 85%);
+  background-image: linear-gradient(rgb(30, 51, 100), rgb(3, 6, 11) 95%);
   height: 100vh;
   width: 100%;
 
@@ -49,17 +49,19 @@ img {
     width: 100%;
     display: flex;
     justify-content: center;
+    color: rgb(128, 128, 128);
 }
 
-.main-page > text {
-  color: hsla(0,0%,100%,.6);
-  transition: color .2s;
+.main-page > a:hover{
+  color: #FFF;
 }
+
 
 .index {
   align-self: flex-start;
   width: 1424px;
   margin-left: 260px;
+  margin-bottom: 120px;
 }
 
 .playlist-show{
@@ -86,7 +88,33 @@ img {
 
 .playlist-show-songs{
  padding-top: 50px;
+ width: 750px;
 }
+
+
+
+.song-listing{
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  transition: background-color .2s linear;
+  transition-property: background-color;
+  transition-duration: 0.2s;
+  transition-timing-function: linear;
+  transition-delay: initial;
+}
+
+.song-listing-title{
+  margin: 0;
+  font-size: 1.2em;
+  color: #FFF;
+}
+.song-listing-artist{
+  margin: 0;
+  font-size: 14px;
+}
+
+
 
 .left-nav-container{
   display: flex;
@@ -114,6 +142,7 @@ img {
   display: flex;
   width: 172px;
   height: 218px;
+  color: rgb(128, 128, 128);
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -125,6 +154,7 @@ img {
 }
 
 .left-nav-link{
+  color: rgb(128, 128, 128);
   border-top: 1px #FFF solid;
   width: 100%;
 }
@@ -145,17 +175,31 @@ img {
   text-align: center;
 }
 
+
  a {
   text-decoration: none;
   font-family: 'Montserrat', sans-serif;
-  color: #FFF;
   cursor: pointer;
+  color: inherit;
+}
+
+a:visited{
+  color: inherit;
+}
+
+a:hover{
+  color: #FFF;
 }
 
 .playlist-detail-text {
   margin-right: 17px;
+  color: #FFF;
 }
 
+.playlist-detail-text-h6 {
+  margin: 0;
+  border: 0;
+}
 
 .playlist-cover{
   display: flex;
@@ -186,6 +230,7 @@ img {
 
 .playlist-show-title{
   font-size: 1.1em;
+  color: #FFF;
 }
 
 .musical-note{
@@ -227,13 +272,15 @@ img {
   z-index: 103;
 }
 
+
+
 .now-playing-container{
 background-color: #181818;
 position: fixed;
 width: 100%;
 height: 120px;
 bottom: 0;
-z-index: 101
+z-index: 101;
 }
 
 .big-wrap {

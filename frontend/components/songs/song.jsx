@@ -19,7 +19,7 @@ class Song extends React.Component {
   render(){
     let deleteButton = null;
     if (this.props.removable === true){
-      deleteButton = <button onClick={ this.handleDelete }>Remove from Playlist</button>;
+      deleteButton = <a onClick={ this.handleDelete } >Remove from Playlist</a>;
     } else {
       deleteButton = null;
     }
@@ -29,9 +29,13 @@ class Song extends React.Component {
     return(
 
     <div className="song-listing">
-      <h6>{ song.title }</h6>
-      <h6>{ song.artist.name }</h6>
+      <div className="song-listing-info">
+        <h6 className="song-listing-title">{ song.title }</h6>
+        <h6 className="song-listing-artist">{ song.artist.name }</h6>
+      </div>
+      <div className="song-listing-delete">
       { deleteButton }
+      </div>
     </div>
     );
   }
