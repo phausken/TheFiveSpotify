@@ -5,6 +5,7 @@ import PlaylistShowContainer from '../playlists/playlist_show_container';
 import SongIndexContainer from '../songs/song_index_container';
 import { fetchPlaylists } from '../../actions/playlist_actions';
 import { Route, Switch, Link, NavLink } from 'react-router-dom';
+import MusicPlayerContainer from '../music_player/music_player_container';
 
 
 class MainPage extends React.Component {
@@ -39,11 +40,8 @@ class MainPage extends React.Component {
         <Route path='/main_page/playlists/:playlistId' component={PlaylistShowContainer} />
         <Route path='/main_page/songs' component={ SongIndexContainer } />
       </Switch>
-        <div className="now-playing-container">
-          <button className="play-button"><i className="fa fa-play-circle-o" aria-hidden="true"></i></button>
-          <progress></progress>
+      <MusicPlayerContainer/>
         </div>
-      </div>
     );
   }
 }
