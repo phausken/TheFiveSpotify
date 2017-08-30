@@ -4,7 +4,7 @@ import { getCurrentTrack } from '../../reducers/selectors';
 
 const mapStateToProps = (state) => {
   return {
-    currentTrack: getCurrentTrack(state),
+    currentTrack: getCurrentTrack(state) || {},
     status: state.ui.status,
   };
 };

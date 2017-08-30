@@ -1,4 +1,4 @@
-import { CURRENT_SONG, CURRENT_PLAYLIST } from '../actions/ui_actions';
+import { CURRENT_SONG, CURRENT_PLAYLIST, NEXT_PLAYLIST } from '../actions/ui_actions';
 import { merge } from 'lodash';
 
 
@@ -7,6 +7,7 @@ const uiReducer = (state = {}, action) => {
   Object.freeze(state);
   let currentSongId;
   let queue = [];
+  let status = "";
 
   switch(action.type){
     case CURRENT_SONG:
@@ -26,7 +27,9 @@ const uiReducer = (state = {}, action) => {
           currentSongId,
           status: "playing",
           queue,
-      };
+        };
+    case NEXT_PLAYLIST:
+      currentSongId = state.ui.queue[1];
     default:
       return state;
     }
