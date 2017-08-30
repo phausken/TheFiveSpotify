@@ -11,7 +11,7 @@ class PlaylistDetail extends React.Component {
     return(
       <div className="playlist-detail">
         <Link to={playlistId}><div className="playlist-cover">
-          <div className="musical-note"></div>
+          <div className="musical-note"><i className="fa fa-music" aria-hidden="true"></i></div>
         </div></Link>
       <div className="playlist-detail-text">
         <Link to={playlistId}><h6>{this.props.playlist.name}</h6></Link>

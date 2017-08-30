@@ -19,7 +19,7 @@ class PlaylistShow extends React.Component {
 
   handlePlay(e){
 
-    e.preventDefault()
+    e.preventDefault();
     this.props.receiveCurrentPlaylist(this.props.playlists[this.props.playlistId]);
   }
 
@@ -50,7 +50,7 @@ class PlaylistShow extends React.Component {
     <div className="playlist-show">
       <div className="playlist-show-details-container">
         <div className="playlist-show-cover">
-          <div className="show-musical-note"></div>
+          <div className="show-musical-note"><i className="fa fa-music" aria-hidden="true"></i></div>
         </div>
           <div className="playlist-show-details-text">
             <h6 className="playlist-show-title">{ playlist.name }</h6>

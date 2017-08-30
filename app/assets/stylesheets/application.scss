@@ -299,8 +299,8 @@ a:hover{
 .show-musical-note{
   height: 40%;
   width: 40%;
-  background-image: image-url('musical_note.png');
   background-size: 100%;
+  font-size: 130px;
 }
 
 .playlist-show-title{
@@ -311,8 +311,8 @@ a:hover{
 .musical-note{
   height: 40%;
   width: 40%;
-  background-image: image-url('musical_note.png');
   background-size: 100%;
+  font-size: 70px;
 }
 
 
@@ -347,6 +347,11 @@ a:hover{
   z-index: 103;
 }
 
+.add-playlist-underlay{
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+}
 
 
 .now-playing-container{

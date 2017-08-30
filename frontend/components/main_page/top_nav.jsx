@@ -61,7 +61,7 @@ class TopNav extends React.Component {
           className="add-playlist-modal"
           overlayClassName="add-playlist-overlay"
           contentLabel="add playlist">
-          <div>
+          <div className="add-playlist-underlay">
             <form className="add-playlist-form">
              <label>Playlist Name</label>
              <input
@@ -71,8 +71,9 @@ class TopNav extends React.Component {
                value={this.state.name}/>
              <button onClick={this.handleSubmit }>Add Playlist</button>
             </form>
-          </div>
+
           <button onClick={ this.handleClose }>CANCEL</button>
+          </div>
         </Modal>
       </nav>
 
