@@ -3,31 +3,45 @@ import ReactAudioPlayer from 'react-audio-player';
 
 
 class MusicPlayer extends React.Component {
+  constructor(props){
+    super(props);
 
-  // componentDidMount(){
-  //   if (this.props.currentTrack){
-  //   this.audio.src = this.props.currentTrack.url;
-  //   this.audio.play();
-  //   }
-  // }
+    this.handlePause = this.handlePause.bind(this);
+    this.handlePlay = this.handlePlay.bind(this);
+    this.playButton = this.playButton.bind(this);
+  }
+
 
   componentDidUpdate(nextprops){
-    // if (nextprops.currentTrack.id !== this.props.currentTrack.id){
-    //   this.audio.src = nextprops.currentTrack.url;
-    // }
 
     this.audio.load();
     this.audio.play();
   }
 
+  handlePlay(e){
+    e.preventDefault();
+    this.audio.play();
+  }
 
+  handlePause(e){
+    e.preventDefault();
+    this.audio.pause();
+  }
+
+  playButton(){
+    if (this.props.status === "playing"){
+      return <button onClick={ this.handlePause } className="play-button"><i className="fa fa-pause" aria-hidden="true"></i></button>;
+    } else {
+      return <button onClick={ this.handlePlay } className="play-button"><i className="fa fa-play" aria-hidden="true"></i></button>;
+    }
+  }
 
   render(){
 
 
     return (
       <div className="now-playing-container">
-        <button className="play-button"><i className="fa fa-play-circle-o" aria-hidden="true"></i></button>
+        { this.playButton() }
         <progress></progress>
 
         <audio ref={(audio) => { this.audio = audio; }} autoPlay="true" id="musicPlayer">
