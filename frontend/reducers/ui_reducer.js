@@ -1,4 +1,4 @@
-import { CURRENT_SONG, CURRENT_PLAYLIST, NEXT_PLAYLIST } from '../actions/ui_actions';
+import { CURRENT_SONG, CURRENT_PLAYLIST, NEXT_PLAYLIST, PLAY_TRACK, PAUSE_TRACK } from '../actions/ui_actions';
 import { merge } from 'lodash';
 
 
@@ -28,8 +28,17 @@ const uiReducer = (state = {}, action) => {
           status: "playing",
           queue,
         };
+    case PLAY_TRACK:
+      return Object.assign({}, state, {status: "playing"});
+    case PAUSE_TRACK:
+      return Object.assign({}, state, {status: "paused"});
     case NEXT_PLAYLIST:
-      currentSongId = state.ui.queue[1];
+      queue = state.queue;
+      if (queue.length === 0){
+        return Object.assign({}, state, {currentSongId: 0, status: "", queue: []});
+      } else {
+        return Object.assign({}, state, {currentSongId: queue[0], status: "playing", queue: queue.slice(1)});
+      }
     default:
       return state;
     }

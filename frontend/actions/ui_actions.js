@@ -1,6 +1,8 @@
 export const CURRENT_PLAYLIST = 'CURRENT_PLAYLIST';
 export const CURRENT_SONG = 'CURRENT_SONG';
 export const NEXT_PLAYLIST = 'NEXT_PLAYLIST';
+export const PAUSE_TRACK = 'PAUSE_TRACK';
+export const PLAY_TRACK = 'PLAY_TRACK';
 
 export const receiveCurrentPlaylist = (playlist) => {
   return {
@@ -19,5 +21,17 @@ export const receiveCurrentSong = (song) => {
 export const nextPlaylist = () => {
   return {
     type: NEXT_PLAYLIST
+  };
+};
+
+export const pauseTrack = () => {
+  return {
+    type: PAUSE_TRACK,
+  };
+};
+
+export const playTrack = () => {
+  return {
+    type: PLAY_TRACK,
   };
 };

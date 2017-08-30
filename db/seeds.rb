@@ -42,6 +42,9 @@ Song3 = Song.create(title: "Freedom Jazz Dance", artist_id: Artist1.id, url: "ur
 Song4 = Song.create(title: "Ascension", artist_id: Artist2.id, url: "url1")
 Song5 = Song.create(title: "Half Nelson", artist_id: Artist3.id, url: "https://ia601309.us.archive.org/14/items/CharlieParker137Songs/CharlieParkerOrch-HalfNelson1947.mp3")
 Song6 = Song.create(title: "Donna Lee", artist_id: Artist3.id, url: "https://ia801309.us.archive.org/14/items/CharlieParker137Songs/CharlieParkerOrch-DonnaLee1947.mp3")
+Song7 = Song.create(title: "Story of My Life", artist_id: Artist3.id, url: "https://ia800602.us.archive.org/21/items/brennanworldwide5sec/A.Barbu_Young.mp3")
+Song8 = Song.create(title: "String Waltz", artist_id: Artist3.id, url: "https://ia800602.us.archive.org/21/items/brennanworldwide5sec/artificialcuttlefish_theoretical_strings_waltz.mp3")
+
 
 PlaylistAdd.destroy_all
 

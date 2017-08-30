@@ -146,7 +146,6 @@ img {
 }
 
 .song-list{
-  display: flex;
   align-items: flex-start;
   justify-content: space-between;
   padding-top: 5px;
@@ -352,7 +351,6 @@ a:hover{
 
 .now-playing-container{
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
   background-color: #181818;
@@ -362,6 +360,11 @@ a:hover{
   bottom: 0;
   z-index: 101;
 }
+
+.now-playing-track-info{
+
+}
+
 
 .fa.fa-play-circle-o{
   font-size: 48px;

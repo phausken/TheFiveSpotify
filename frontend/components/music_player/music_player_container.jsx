@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
 import MusicPlayer from './music_player';
+import { playTrack, pauseTrack, nextPlaylist } from '../../actions/ui_actions';
 import { getCurrentTrack } from '../../reducers/selectors';
 
 const mapStateToProps = (state) => {
@@ -9,4 +10,12 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps, null)(MusicPlayer);
+const mapDispatchToProps = (dispatch) => {
+  return {
+    playTrack: () => dispatch(playTrack()),
+    pauseTrack: () => dispatch(pauseTrack()),
+    nextPlaylist: () => dispatch(nextPlaylist()),
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(MusicPlayer);
