@@ -18,6 +18,11 @@ export const getAllPlaylists = ({session, playlists}) => {
   return playlists;
 };
 
+export const getCurrentTrack = ({ui, songs}) => {
+  const currentSongId = ui.currentSongId;
+  return songs[currentSongId];
+};
+
 export const getAllSongs = ({songs}) => {
   return songs;
-}
+};
