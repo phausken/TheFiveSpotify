@@ -17,6 +17,7 @@ class MusicPlayer extends React.Component {
   componentDidUpdate(nextprops){
 
     if (this.props.currentTrack.id !== nextprops.currentTrack.id){
+    this.audio.pause();
     this.audio.load();
     this.audio.play();
     }

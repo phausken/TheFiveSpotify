@@ -81,7 +81,7 @@ class SongIndex extends React.Component {
 
     let songArray = Object.values(this.props.songs);
     let playlistArray = Object.values(this.props.playlists);
-    const allSongs = songArray.map((song, index) => <li  className="song-index-listing"><SongContainer key={song.id} song={ song } /><a onClick={this.handleOpen(song.id)}>Add to Playlist</a></li>);
+    const allSongs = songArray.map((song, index) => <li  className="song-index-listing"><div className="song-listing-div"><SongContainer key={song.id} song={ song } /><a onClick={this.handleOpen(song.id)}>Add to Playlist</a></div></li>);
     const allPlaylists = playlistArray.map((playlist, index) => <li className="add-playlist-listing" onClick={this.handleSelect(playlist.id, index)}><h5 className={ this.checkSelected(index) }>{ playlist.name }</h5></li>);
 
     return(
@@ -89,9 +89,9 @@ class SongIndex extends React.Component {
       <div className="index">
         < TopNavContainer />
         <div>
-          <ul>
+          <ol className="song-index">
             {allSongs}
-          </ul>
+          </ol >
         </div>
 
         <Modal

@@ -36,7 +36,7 @@ class PlaylistShow extends React.Component {
     const playlistId = this.props.playlistId || {};
     const playlist = this.props.playlists[this.props.playlistId] || {name: "", songs: [""], user: {username: ""}};
     let songs = playlist.songs || [];
-    allsongs = songs.map((song) => {return <li><SongContainer key={ song.id } playlistId={ this.props.playlistId } removable={ true } song={ song }/></li>;});
+    allsongs = songs.map((song) => {return <li className="playlist-song-listing"><div className="song-listing-div"><SongContainer key={ song.id } playlistId={ this.props.playlistId } removable={ true } song={ song }/></div></li>;});
     songCount = songs.length;
 
 

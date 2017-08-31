@@ -160,6 +160,14 @@ img {
   background: rgba(0,0,0,0.3);
 }
 
+.playlist-song-listing{
+  padding-top: 3px;
+  padding-bottom: 3px;
+}
+
+.playlist-song-listing:hover{
+  background: rgba(0,0,0,0.3)
+}
 .song-listing{
   height: 100%;
   width: 100%;
@@ -184,9 +192,14 @@ img {
   font-size: 14px;
 }
 
-.song-index-listing{
+.song-listing-div{
   display: flex;
-  justify-content: space-between;
+  position: relative;
+  top: -22px;
+}
+
+.song-index-listing{
+  list-style: decimal;
   padding-top: 3px;
   padding-bottom: 3px;
 }
