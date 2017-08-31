@@ -86,10 +86,15 @@ class MusicPlayer extends React.Component {
           <h6>{ trackName }</h6>
           <h6>{ artistName.name }</h6>
         </div>
-        <div className="button-progress">
-          { this.playButton() }
-          <div style={{width: "642px"}}className="progress-bar-container"><div className="progress-bar" style={{width: `${642 * (this.audio.currentTime / (this.audio.duration || 1))}`}}/></div>
+        <div className="progress-time">
+          <h6>{ this.audio.currentTime }</h6>
+          <div className="button-progress">
+            { this.playButton() }
+          <div style={{width: "642px"}}className="progress-bar-container">
+            <div className="progress-bar" style={{width: `${642 * (this.audio.currentTime / (this.audio.duration || 1))}`}}/></div>
 
+      </div>
+      <h6>{ this.audio.duration }</h6>
         </div>
         <div><i className="fa fa-volume-up" aria-hidden="true"></i><input onChange={ this.setVolume } ref={(volume) => {this.volume = volume; } } min="0" max="1" step="0.1" type="range"/></div>
           <audio onEnded={ this.handleNext } ref={(audio) => { this.audio = audio; } } autoPlay="true" src={ `${this.props.currentTrack.url}` } id="musicPlayer">
