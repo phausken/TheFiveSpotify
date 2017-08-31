@@ -20,7 +20,12 @@ class MusicPlayer extends React.Component {
     this.audio.pause();
     this.audio.load();
     this.audio.play();
-    }
+  } else if ( this.props.status === "paused"){
+    this.audio.pause();
+  } else if ( this.props.status === "playing"){
+    this.audio.play();
+  }
+
   }
 
   handleNext(e){
