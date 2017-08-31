@@ -18,21 +18,25 @@
   display: flex;
   flex-direction: column;
 }*/
-@font-face {
 
-}
 
 html {
-  height: 100vh;
-  width: 100%;
   background-color: #181818;
 }
 
 
-body{
-  background-image: linear-gradient(rgb(30, 51, 100), rgb(3, 6, 11));
+main {
   height: 100vh;
-  width: 100%;
+
+  }
+
+body{
+  background-color: #181818;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
 
   font-family: 'Montserrat', sans-serif;
   color: #FFF;
@@ -40,12 +44,16 @@ body{
 
 img {
   opacity: 0.5;
+
 }
 
+#root > div {
+  height: 100%;
+}
 
 .main-page{
-
-    height: 100vh;
+    background-image: linear-gradient(rgb(30, 51, 100), rgb(3, 6, 11));
+    height: 100%;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -113,15 +121,22 @@ img {
 
 .index {
   align-self: flex-start;
-  width: 1424px;
+  height: 100%;
+  width: 100%;
   margin-left: 260px;
   margin-bottom: 120px;
+  overflow: scroll;
 }
 
 .playlist-show{
   display: flex;
   margin-left: 260px;
   width: 1424px;
+}
+
+::-webkit-scrollbar{
+  width: 0px;
+  background: transparent;
 }
 
 .playlist-show-details-container{
@@ -248,6 +263,9 @@ img {
 }
 
 .nav-search{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   border-top: 1px #FFF solid;
   width: 100%;
 }
@@ -583,6 +601,10 @@ width: 100%;
   padding-top: 5px;
 }
 
+.left-nav-search-text{
+
+}
+
 .username-display{
   margin: 0;
 }
@@ -596,4 +618,13 @@ width: 100%;
 
 .username{
   align-self: center;
+}
+
+.mag-glass{
+  display: flex;
+  align-items: center;
+}
+
+.fa.fa-search{
+  font-size: 18px;
 }

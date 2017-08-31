@@ -21,8 +21,10 @@ class MainPage extends React.Component {
           <div className="left-nav">
             <nav className="left-nav-top">
               <div className="nav-search">
-                <h3>Search</h3>
-                <div className="mag-glass"></div>
+                <h3 className="left-nav-search-text">Search</h3>
+
+                <div className="mag-glass"><i className="fa fa-search" aria-hidden="true"></i></div>
+
               </div>
               <div className="left-nav-link">
               <NavLink to='/main_page/playlists' activeStyle={{color: '#1db954'}} ><h3>Your Music</h3></NavLink>
