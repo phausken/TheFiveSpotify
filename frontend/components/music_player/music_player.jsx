@@ -6,6 +6,14 @@ class MusicPlayer extends React.Component {
   constructor(props){
     super(props);
 
+    this.state = {
+      time: 0
+    }
+
+    this.audio = this.audio || {currentTime: "", duration: ""};
+
+    this.updateTime = this.updateTime.bind(this);
+    this.setState = this.setState.bind(this);
     this.handlePause = this.handlePause.bind(this);
     this.handlePlay = this.handlePlay.bind(this);
     this.playButton = this.playButton.bind(this);
@@ -13,6 +21,13 @@ class MusicPlayer extends React.Component {
     this.setVolume = this.setVolume.bind(this);
   }
 
+  updateTime(){
+    return this.setState({time: this.audio.currentTime});
+  }
+
+  componentDidMount(){
+    setInterval(this.updateTime, 50);
+  }
 
   componentDidUpdate(nextprops){
 
@@ -64,20 +79,24 @@ class MusicPlayer extends React.Component {
   render(){
     let trackName = this.props.currentTrack.title || "";
     let artistName = this.props.currentTrack.artist || {name: ""};
+
     return (
       <div className="now-playing-container">
         <div className="now-playing-track-info">
           <h6>{ trackName }</h6>
           <h6>{ artistName.name }</h6>
         </div>
-        { this.playButton() }
-        <progress onClick={ this.handleSeek } ref={(progress) => {this.progress = progress;} } min="0" max="100" value="0"></progress>
+        <div className="button-progress">
+          { this.playButton() }
+          <div style={{width: "642px"}}className="progress-bar-container"><div className="progress-bar" style={{width: `${642 * (this.audio.currentTime / (this.audio.duration || 1))}`}}/></div>
+
+        </div>
         <div><i className="fa fa-volume-up" aria-hidden="true"></i><input onChange={ this.setVolume } ref={(volume) => {this.volume = volume; } } min="0" max="1" step="0.1" type="range"/></div>
-        <audio onEnded={ this.handleNext } ref={(audio) => { this.audio = audio; } } autoPlay="true" src={ `${this.props.currentTrack.url}` } id="musicPlayer">
+          <audio onEnded={ this.handleNext } ref={(audio) => { this.audio = audio; } } autoPlay="true" src={ `${this.props.currentTrack.url}` } id="musicPlayer">
            <source src={`${this.props.currentTrack.url}`}></source>
         </audio>
 
-      </div>
+        </div>
     );
   }
 }
