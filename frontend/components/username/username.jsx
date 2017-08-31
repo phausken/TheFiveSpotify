@@ -6,8 +6,11 @@ class Username extends React.Component {
     if (this.props.currentUser){
       return (
         <div className="username">
-          <h3> { this.props.currentUser.username } </h3>
-          <button className="logout" onClick={ this.props.logout}>Log Out</button>
+          <div className="logo-username">
+            <i className="fa fa-user-o" aria-hidden="true"></i>
+            <h3 className="username-display"> { this.props.currentUser.username } </h3>
+          </div>
+        <button className="logout" onClick={ this.props.logout}>Log Out</button>
         </div>
       );
     } else {
