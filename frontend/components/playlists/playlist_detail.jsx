@@ -14,7 +14,7 @@ class PlaylistDetail extends React.Component {
           <div className="musical-note"><i className="fa fa-music" aria-hidden="true"></i></div>
         </div></Link>
       <div className="playlist-detail-text">
-        <Link to={playlistId}><h6>{this.props.playlist.name}</h6></Link>
+        <Link to={playlistId}><h6 className="playlist-index-title">{this.props.playlist.name}</h6></Link>
         <h6>By {this.props.playlist.user.username}</h6>
       </div>
     </div>

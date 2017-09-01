@@ -336,8 +336,13 @@ a:hover{
   color: #FFF;
 }
 
-.playlist-detail-text-h6 {
-  margin: 0;
+.playlist-index-title{
+  margin-top: 15px;
+  margin-bottom: 5px;
+}
+
+.playlist-detail-text > h6 {
+  margin: 10px;
   border: 0;
 }
 
