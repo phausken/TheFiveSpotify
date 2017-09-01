@@ -16,10 +16,10 @@ Playlist.destroy_all
 
 Playlist1 = Playlist.create(name: "50s Jazz", image_url: 'img1', user_id: User1.id)
 Playlist2 = Playlist.create(name: "60s Jazz", image_url: 'img1', user_id: User2.id)
-Playlist3 = Playlist.create(name: "Ballads", image_url: 'img1', user_id: User1.id)
-Playlist4 = Playlist.create(name: "Bebop", image_url: 'img1', user_id: User1.id)
-Playlist5= Playlist.create(name: "Up-Tempo", image_url: 'img1', user_id: User1.id)
-Playlist6 = Playlist.create(name: "Standards", image_url: 'img1', user_id: User1.id)
+Playlist3 = Playlist.create(name: "5 Second Songs!", image_url: 'img1', user_id: User3.id)
+Playlist4 = Playlist.create(name: "Bebop", image_url: 'img1', user_id: User3.id)
+Playlist5= Playlist.create(name: "Guitar", image_url: 'img1', user_id: User3.id)
+Playlist6 = Playlist.create(name: "Ballads", image_url: 'img1', user_id: User3.id)
 Playlist7 = Playlist.create(name: "Piano Trios", image_url: 'img1', user_id: User1.id)
 Playlist8 = Playlist.create(name: "Free Jazz", image_url: 'img1', user_id: User1.id)
 Playlist9 = Playlist.create(name: "Roma", image_url: 'img1', user_id: User1.id)
@@ -50,6 +50,7 @@ Artist17 = Artist.create(name: "George Benson", image_url: 'img3')
 Artist18 = Artist.create(name: "Billie Holiday", image_url: 'img3')
 Artist19 = Artist.create(name: "Charlie Christian", image_url: 'img3')
 Artist20= Artist.create(name: "Charlie Parker", image_url: 'img3')
+Artist21 = Artist.create(name: "Various Artists", image_url: 'img1')
 
 Song.destroy_all
 
@@ -71,14 +72,22 @@ Song16 = Song.create(title: "Evonce", artist_id: Artist16.id, url: 'https://s3.u
 Song18 = Song.create(title: "The Man I Love", artist_id: Artist18.id, url: 'https://s3.us-east-2.amazonaws.com/thefivespotify/10+The+Man+I+Love.mp3')
 Song19 = Song.create(title: "Solo Flight", artist_id: Artist19.id, url: 'https://s3.us-east-2.amazonaws.com/thefivespotify/13+Solo+Flight.mp3')
 Song20 = Song.create(title: "Confirmation", artist_id: Artist20.id, url: 'https://s3.us-east-2.amazonaws.com/thefivespotify/2-11+Confirmation.mp3')
-Song21 = Song.create(title: "First 5 Second Song", artist_id: Artist1.id, url: 'https://s3.us-east-2.amazonaws.com/thefivespotify/Kitschstortion_Algadaeneun.mp3' )
-Song22 = Song.create(title: "Second 5 Second Song", artist_id: Artist1.id, url: 'https://s3.us-east-2.amazonaws.com/thefivespotify/artificialcuttlefish_theoretical_strings_waltz.mp3' )
-
-
+Song21 = Song.create(title: "First 5 Second Song", artist_id: Artist21.id, url: 'https://s3.us-east-2.amazonaws.com/thefivespotify/Kitschstortion_Algadaeneun.mp3' )
+Song22 = Song.create(title: "Second 5 Second Song", artist_id: Artist21.id, url: 'https://s3.us-east-2.amazonaws.com/thefivespotify/artificialcuttlefish_theoretical_strings_waltz.mp3' )
+Song23 = Song.create(title: "Billies Bounce", artist_id: Artist20.id, url: 'https://s3.us-east-2.amazonaws.com/thefivespotify/Billies+Bounce.mp3' )
+Song24 = Song.create(title: "In the Wee Small Hours", artist_id: Artist14.id, url: 'https://s3.us-east-2.amazonaws.com/thefivespotify/05+In+the+Wee+Small+Hours+of+the.mp3')
 
 PlaylistAdd.destroy_all
 
-PlaylistAdd1 = PlaylistAdd.create(playlist_id: Playlist1.id, song_id: Song1.id)
-PlaylistAdd2 = PlaylistAdd.create(playlist_id: Playlist1.id, song_id: Song2.id)
-PlaylistAdd3 = PlaylistAdd.create(playlist_id: Playlist2.id, song_id: Song3.id)
-PlaylistAdd4 = PlaylistAdd.create(playlist_id: Playlist2.id, song_id: Song4.id)
+PlaylistAdd1 = PlaylistAdd.create(playlist_id: Playlist3.id, song_id: Song21.id)
+PlaylistAdd2 = PlaylistAdd.create(playlist_id: Playlist3.id, song_id: Song22.id)
+PlaylistAdd3 = PlaylistAdd.create(playlist_id: Playlist4.id, song_id: Song23.id)
+PlaylistAdd4 = PlaylistAdd.create(playlist_id: Playlist4.id, song_id: Song13.id)
+PlaylistAdd5 = PlaylistAdd.create(playlist_id: Playlist4.id, song_id: Song15.id)
+PlaylistAdd6 = PlaylistAdd.create(playlist_id: Playlist4.id, song_id: Song4.id)
+PlaylistAdd7 = PlaylistAdd.create(playlist_id: Playlist5.id, song_id: Song19.id)
+PlaylistAdd8 = PlaylistAdd.create(playlist_id: Playlist5.id, song_id: Song11.id)
+PlaylistAdd9 = PlaylistAdd.create(playlist_id: Playlist6.id, song_id: Song18.id)
+PlaylistAdd10 = PlaylistAdd.create(playlist_id: Playlist6.id, song_id: Song8.id)
+PlaylistAdd11 = PlaylistAdd.create(playlist_id: Playlist6.id, song_id: Song24.id)
+PlaylistAdd12 = PlaylistAdd.create(playlist_id: Playlist6.id, song_id: Song2.id)
