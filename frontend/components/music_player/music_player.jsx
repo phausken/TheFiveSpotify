@@ -19,6 +19,7 @@ class MusicPlayer extends React.Component {
     this.playButton = this.playButton.bind(this);
     this.handleNext = this.handleNext.bind(this);
     this.setVolume = this.setVolume.bind(this);
+    this.parseTime = this.parseTime.bind(this);
   }
 
   updateTime(){
@@ -48,6 +49,22 @@ class MusicPlayer extends React.Component {
     this.props.nextPlaylist();
   }
 
+  parseTime(time){
+    time = time || 0;
+    let seconds = Math.floor(time) % 60;
+    let minutes = Math.floor(time / 60);
+
+    if (time < 10){
+      return `0:0${seconds}`;
+    } else if (time < 60 ) {
+      return `0:${seconds}`;
+    } else if (seconds < 10) {
+      return `${minutes}:0${seconds}`;
+    } else {
+      return `${minutes}:${seconds}`;
+    }
+  }
+
   handlePlay(e){
 
     e.preventDefault();
@@ -71,7 +88,6 @@ class MusicPlayer extends React.Component {
   }
 
 
-
   setVolume(){
     this.audio.volume = this.volume.value;
   }
@@ -87,14 +103,14 @@ class MusicPlayer extends React.Component {
           <h6>{ artistName.name }</h6>
         </div>
         <div className="progress-time">
-          <h6>{ this.audio.currentTime }</h6>
+          <h6>{ this.parseTime(this.audio.currentTime) }</h6>
           <div className="button-progress">
             { this.playButton() }
           <div style={{width: "642px"}}className="progress-bar-container">
             <div className="progress-bar" style={{width: `${642 * (this.audio.currentTime / (this.audio.duration || 1))}`}}/></div>
 
       </div>
-      <h6>{ this.audio.duration }</h6>
+      <h6>{ this.parseTime(this.audio.duration) }</h6>
         </div>
         <div><i className="fa fa-volume-up" aria-hidden="true"></i><input onChange={ this.setVolume } ref={(volume) => {this.volume = volume; } } min="0" max="1" step="0.1" type="range"/></div>
           <audio onEnded={ this.handleNext } ref={(audio) => { this.audio = audio; } } autoPlay="true" src={ `${this.props.currentTrack.url}` } id="musicPlayer">

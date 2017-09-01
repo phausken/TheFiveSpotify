@@ -434,6 +434,7 @@ a:hover{
 .now-playing-track-info > h6{
   margin: 0;
   padding: 5px;
+  width: 110px;
 }
 
 
@@ -688,4 +689,8 @@ width: 100%;
 
 .progress-time{
   display: flex;
+}
+
+.progress-time > h6 {
+  width: 20px;
 }
