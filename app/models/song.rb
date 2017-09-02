@@ -1,4 +1,7 @@
 class Song < ActiveRecord::Base
+  include PgSearch
+  multisearchable against: [:title]
+
   validates :title, presence: true
 
   has_many :playlist_adds,

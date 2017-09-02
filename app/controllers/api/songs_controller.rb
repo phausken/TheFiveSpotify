@@ -4,7 +4,6 @@ class Api::SongsController < ApplicationController
     @songs = Song.all
   end
 
-
 private
 def song_params
   params.require(:song).permit(:status)
