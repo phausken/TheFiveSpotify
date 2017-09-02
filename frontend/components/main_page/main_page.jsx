@@ -6,6 +6,7 @@ import SongIndexContainer from '../songs/song_index_container';
 import { fetchPlaylists } from '../../actions/playlist_actions';
 import { Route, Switch, Link, NavLink } from 'react-router-dom';
 import MusicPlayerContainer from '../music_player/music_player_container';
+import Search from '../search/search';
 
 
 class MainPage extends React.Component {
@@ -21,7 +22,7 @@ class MainPage extends React.Component {
           <div className="left-nav">
             <nav className="left-nav-top">
               <div className="nav-search">
-                <h3 className="left-nav-search-text">Search</h3>
+                <Link to='/main_page/search'><h3 className="left-nav-search-text">Search</h3></Link>
 
                 <div className="mag-glass"><i className="fa fa-search" aria-hidden="true"></i></div>
 
@@ -41,6 +42,7 @@ class MainPage extends React.Component {
         <Route exact path='/main_page/playlists' component={PlaylistsIndexContainer} />
         <Route path='/main_page/playlists/:playlistId' component={PlaylistShowContainer} />
         <Route path='/main_page/songs' component={ SongIndexContainer } />
+        <Route path='/main_page/search' component={ Search }/>
       </Switch>
       <MusicPlayerContainer/>
         </div>

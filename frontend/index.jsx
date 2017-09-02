@@ -5,6 +5,7 @@ import Root from './components/root';
 import { fetchPlaylists, fetchPlaylist, receivePlaylists, receivePlaylist, createPlaylist, editPlaylist, deletePlaylist } from './actions/playlist_actions';
 import { createPlaylistAdd, deletePlaylistAdd } from './actions/playlist_adds_actions';
 import Modal from 'react-modal';
+import { fetchResults } from './actions/search_actions';
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -25,6 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   window.createPlaylistAdd = createPlaylistAdd;
   window.deletePlaylistAdd = deletePlaylistAdd;
+  window.fetchResults = fetchResults;
 
 
 
