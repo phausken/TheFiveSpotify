@@ -26,3 +26,24 @@ export const getCurrentTrack = ({ui, songs}) => {
 export const getAllSongs = ({songs}) => {
   return songs;
 };
+
+export const getAllResults = ({search, playlists, songs}) => {
+
+  let songResults = [];
+  let playlistResults = [];
+
+  for (let i = 0; i < search.length; i++){
+    let type = search[i].searchable_type;
+    let id = search[i].searchable_id;
+    if ( type === "Playlist" ){
+      playlistResults.push(playlists[id]);
+    } else if ( type === "Song" ){
+      songResults.push(songs[id]);
+    }
+  }
+
+  return {
+    songResults,
+    playlistResults,
+  };
+};
