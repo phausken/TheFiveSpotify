@@ -24,7 +24,6 @@ class SongIndex extends React.Component {
   handleOpen(songId){
   return (e) => {
     e.preventDefault();
-    this.props.requestPlaylists();
     this.setState({
       modalOpen: true,
       song_id: songId,
