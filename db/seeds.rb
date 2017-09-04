@@ -26,7 +26,7 @@ Playlist9 = Playlist.create(name: "Roma", image_url: 'img1', user_id: User1.id)
 Playlist10 = Playlist.create(name: "Fusion", image_url: 'img1', user_id: User1.id)
 Playlist11 = Playlist.create(name: "New Releases", image_url: 'img1', user_id: User1.id)
 Playlist12 = Playlist.create(name: "Blues", image_url: 'img2', user_id: User1.id)
-
+Playlist13 = Playlist.create(name: "Standards", image_url: 'img3', user_id: User1.id)
 
 Artist.destroy_all
 
@@ -91,7 +91,12 @@ PlaylistAdd9 = PlaylistAdd.create(playlist_id: Playlist6.id, song_id: Song18.id)
 PlaylistAdd10 = PlaylistAdd.create(playlist_id: Playlist6.id, song_id: Song8.id)
 PlaylistAdd11 = PlaylistAdd.create(playlist_id: Playlist6.id, song_id: Song24.id)
 PlaylistAdd12 = PlaylistAdd.create(playlist_id: Playlist6.id, song_id: Song2.id)
+PlaylistAdd13 = PlaylistAdd.create(playlist_id: Playlist13.id, song_id: Song2.id)
+PlaylistAdd14 = PlaylistAdd.create(playlist_id: Playlist13.id, song_id: Song18.id)
+PlaylistAdd15 = PlaylistAdd.create(playlist_id: Playlist13.id, song_id: Song24.id)
+
 
 PlaylistFollow.destroy_all
 
 PlaylistFollow1 = PlaylistFollow.create(playlist_id: Playlist2.id, user_id: User1.id)
+PlaylistFollow2 = PlaylistFollow.create(playlist_id: Playlist13.id, user_id: User3.id)
