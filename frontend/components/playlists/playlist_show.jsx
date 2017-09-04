@@ -10,6 +10,9 @@ class PlaylistShow extends React.Component {
 
     this.handleDelete = this.handleDelete.bind(this);
     this.handlePlay = this.handlePlay.bind(this);
+    this.handleFollow = this.handleFollow.bind(this);
+    this.handleUnfollow = this.handleUnfollow.bind(this);
+    this.removable = this.removable.bind(this);
   }
 
   handleDelete(e){
@@ -28,6 +31,44 @@ class PlaylistShow extends React.Component {
     this.props.requestPlaylist(this.props.playlistId));
   }
 
+  handleFollow(e){
+    this.props.createPlaylistFollow({user_id: this.props.currentUser, playlist_id: this.props.playlistId})
+  }
+
+  handleUnfollow(e){
+    this.props.deletePlaylistFollow({user_id: this.props.currentUser, playlist_id: this.props.playlistId})
+  }
+
+  playlistButton(currentUser, author, followers){
+    if ( author === currentUser ){
+      return (
+
+          <Link onClick={ this.handleDelete } to='/main_page/playlists'>DELETE</Link>
+
+        );
+      } else if ( followers.includes(currentUser) ){
+        return (
+
+            <Link onClick={ this.handleUnfollow } to='/main_page/playlists'>UNFOLLOW</Link>
+
+        );
+      } else {
+        return (
+
+            <Link onClick={ this.handleFollow } to='/main_page/playlists'>FOLLOW</Link>
+
+        );
+      }
+    }
+
+    removable(){
+      if (this.props.currentUser === this.props.playlists[this.props.playlistId].user_id){
+        return true;
+      } else {
+        return false;
+      }
+    }
+
   render(){
 
     let allsongs;
@@ -35,8 +76,12 @@ class PlaylistShow extends React.Component {
     let countWord;
     const playlistId = this.props.playlistId || {};
     const playlist = this.props.playlists[this.props.playlistId] || {name: "", songs: [""], user: {username: ""}};
+    const author = playlist.user_id || "";
+    const followers = playlist.followers || [];
+    const currentUser = this.props.currentUser || "";
     let songs = playlist.songs || [];
-    allsongs = songs.map((song) => {return <div className="song-listing-div"><SongContainer key={ song.id } playlistId={ this.props.playlistId } removable={ true } song={ song }/></div>;});
+
+    allsongs = songs.map((song) => {return <div className="song-listing-div"><SongContainer key={ song.id } playlistId={ this.props.playlistId } removable={ this.removable() } song={ song }/></div>;});
     songCount = songs.length;
 
 
@@ -57,9 +102,7 @@ class PlaylistShow extends React.Component {
             <h6 className="playlist-detail-text-h6">By { playlist.user.username }</h6>
             <h6 className="playlist-detail-text-h6">{ songCount } { countWord }</h6>
             <button onClick={ this.handlePlay }>PLAY</button>
-            <form onSubmit={ this.handleDelete }>
-              <Link onClick={ this.handleDelete } to='/main_page/playlists'>DELETE</Link>
-              </form>
+            { this.playlistButton(currentUser, author, followers)  }
           </div>
       </div>
       <div className="playlist-show-songs">

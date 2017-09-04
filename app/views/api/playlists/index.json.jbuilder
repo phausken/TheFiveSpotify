@@ -4,5 +4,9 @@
     json.song_ids do
       json.array!(playlist.songs.ids)
     end
+
+    json.followers do
+      json.array!(playlist.followers.ids)
+    end
   end
 end

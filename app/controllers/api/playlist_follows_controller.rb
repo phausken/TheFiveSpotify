@@ -1,6 +1,7 @@
 class Api::PlaylistFollowsController < ApplicationController
   def create
     @playlist_follow = PlaylistFollow.new(playlist_follow_params)
+    @playlist = @playlist_follow.playlist
     if @playlist_follow.save
       render '/api/playlists/show'
     else
@@ -10,6 +11,7 @@ class Api::PlaylistFollowsController < ApplicationController
 
   def destroy
     @playlist_follow = PlaylistFollow.find_by(playlist_follow_params)
+    @playlist = @playlist_follow.playlist
     if @playlist_follow
       @playlist_follow.destroy
       render '/api/playlists/show'
@@ -20,7 +22,7 @@ class Api::PlaylistFollowsController < ApplicationController
 
 private
 def playlist_follow_params
-  params.require(:playlistfollow).permit(:user_id, :playlist_id)
+  params.require(:playlistFollow).permit(:user_id, :playlist_id)
 end
 
 end

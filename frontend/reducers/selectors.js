@@ -8,6 +8,23 @@ export const getCurrentUserPlaylists = ({session, playlists}) => {
   for (let i = 0; i < playlistIds.length; i++){
     if (  playlistsValues[i].user_id === currentUserId ){
       result.push(playlistsValues[i]);
+    } else if ( playlistsValues[i].followers.includes(currentUserId)){
+      result.push(playlistsValues[i]);
+    }
+  }
+
+  return result;
+};
+
+export const getCurrentAuthorPlaylists = ({session, playlists}) => {
+  let currentUserId = session.currentUser.id;
+  let playlistIds = Object.keys(playlists).map(id => parseInt(id));
+  let playlistsValues = Object.values(playlists);
+  let result = [];
+
+  for (let i = 0; i < playlistIds.length; i++){
+    if (  playlistsValues[i].user_id === currentUserId ){
+      result.push(playlistsValues[i]);
     }
   }
 
