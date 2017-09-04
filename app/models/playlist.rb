@@ -12,4 +12,10 @@ class Playlist < ActiveRecord::Base
     through: :playlist_adds,
     source: :song
 
+  has_many :playlist_follows
+
+  has_many :followers,
+    through: :playlist_follows,
+    source: :user
+
 end

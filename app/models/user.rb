@@ -7,6 +7,12 @@ attr_reader :password
 
 has_many :playlists
 
+has_many :playlist_follows
+
+has_many :followed_playlists,
+  through: :playlist_follows,
+  source: :playlist
+
 after_initialize :ensure_session_token
 
 def self.generate_session_token

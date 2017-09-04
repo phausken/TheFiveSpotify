@@ -91,3 +91,7 @@ PlaylistAdd9 = PlaylistAdd.create(playlist_id: Playlist6.id, song_id: Song18.id)
 PlaylistAdd10 = PlaylistAdd.create(playlist_id: Playlist6.id, song_id: Song8.id)
 PlaylistAdd11 = PlaylistAdd.create(playlist_id: Playlist6.id, song_id: Song24.id)
 PlaylistAdd12 = PlaylistAdd.create(playlist_id: Playlist6.id, song_id: Song2.id)
+
+PlaylistFollow.destroy_all
+
+PlaylistFollow1 = PlaylistFollow.create(playlist_id: Playlist2.id, user_id: User1.id)

@@ -4,4 +4,8 @@ json.set!(@playlist.id) do
   json.songs do
     json.array!(@playlist.songs, :id, :title, :artist)
   end
+
+  json.followers do
+    json.array!(@playlist.followers.ids)
+  end
 end
