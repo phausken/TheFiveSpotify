@@ -99,14 +99,15 @@ render(){
 
   return (
     <div className="index">
-      <div>
-        <input type="text" value={ this.state.query }  onChange={ this.handleChange }></input>
+      <div className="search-nav">
+        <h3>Search for a song or playlist</h3>
+        <input className="search-bar" type="text" value={ this.state.query } placeholder="Start typing..."  onChange={ this.handleChange }></input>
       </div>
-      <div>
-        <ul>
+      <div classname="search-results">
+        <ul classname="search-results-songs">
           {allSongs}
         </ul>
-        <div className="search-result-playlists">
+        <div className="playlist-index">
           { allPlaylists }
         </div>
       </div>

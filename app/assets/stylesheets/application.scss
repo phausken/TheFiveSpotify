@@ -304,15 +304,46 @@ img {
   width: 100%;
 }
 
+.nav-search > a {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.search-bar{
+    caret-color: #1db954;
+    box-sizing: border-box;
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    font-weight: 700;
+    font-size: 3rem;
+    line-height: 1.6;
+}
+
+.search-bar:focus{
+  outline: none;
+}
+
+.search-results > div {
+  margin: 5px;
+}
+
 .playlist-index{
   display: flex;
   flex-wrap: wrap;
+}
+
+.search-result-songs{
+  margin-right: 10px;
 }
 
 .playlist-detail{
   width: 224px;
   height: 321px;
   text-align: center;
+  margin: 5px;
 }
 
 
