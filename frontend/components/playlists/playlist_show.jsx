@@ -62,7 +62,8 @@ class PlaylistShow extends React.Component {
     }
 
     removable(){
-      if (this.props.currentUser === this.props.playlists[this.props.playlistId].user_id){
+      let playlist = this.props.playlists[this.props.playlistId] || {user_id: ""};
+      if (this.props.currentUser === playlist.userId){
         return true;
       } else {
         return false;

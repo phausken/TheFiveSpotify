@@ -5,6 +5,5 @@ export const createPlaylistFollow = playlistFollow => dispatch => {
 };
 
 export const deletePlaylistFollow = playlistFollow => dispatch => {
-  debugger;
   return APIUtil.deletePlaylistFollow(playlistFollow);
 };
