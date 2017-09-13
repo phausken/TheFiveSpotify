@@ -1,6 +1,7 @@
 class Song < ActiveRecord::Base
   include PgSearch
-  multisearchable against: [:title]
+  multisearchable against: [:title, :artist]
+
 
   validates :title, presence: true
 

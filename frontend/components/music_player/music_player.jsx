@@ -8,7 +8,7 @@ class MusicPlayer extends React.Component {
 
     this.state = {
       time: 0
-    }
+    };
 
     this.audio = this.audio || {currentTime: "", duration: ""};
 
