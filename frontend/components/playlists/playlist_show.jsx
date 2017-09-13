@@ -43,19 +43,19 @@ class PlaylistShow extends React.Component {
     if ( author === currentUser ){
       return (
 
-          <Link onClick={ this.handleDelete } to='/main_page/playlists'>DELETE</Link>
+          <Link className="playlist-button" onClick={ this.handleDelete } to='/main_page/playlists'>DELETE</Link>
 
         );
       } else if ( followers.includes(currentUser) ){
         return (
 
-            <Link onClick={ this.handleUnfollow } to='/main_page/playlists'>UNFOLLOW</Link>
+            <Link className="playlist-button" onClick={ this.handleUnfollow } to='/main_page/playlists'>UNFOLLOW</Link>
 
         );
       } else {
         return (
 
-            <Link onClick={ this.handleFollow } to='/main_page/playlists'>FOLLOW</Link>
+            <Link className="playlist-button" onClick={ this.handleFollow } to='/main_page/playlists'>FOLLOW</Link>
 
         );
       }
@@ -102,7 +102,7 @@ class PlaylistShow extends React.Component {
             <h6 className="playlist-show-title">{ playlist.name }</h6>
             <h6 className="playlist-detail-text-h6">By { playlist.user.username }</h6>
             <h6 className="playlist-detail-text-h6">{ songCount } { countWord }</h6>
-            <button onClick={ this.handlePlay }>PLAY</button>
+            <button className="playlist-play" onClick={ this.handlePlay }>PLAY</button>
             { this.playlistButton(currentUser, author, followers)  }
           </div>
       </div>

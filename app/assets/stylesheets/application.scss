@@ -151,6 +151,7 @@ img {
 .playlist-show-details-text{
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
   align-content: center;
   text-align: center;
 }
@@ -365,6 +366,8 @@ a:hover{
 .playlist-detail-text {
   margin-right: 17px;
   color: #FFF;
+  margin-top: 2px;
+  margin-bottom: 2px;
 }
 
 .playlist-index-title{
@@ -372,9 +375,8 @@ a:hover{
   margin-bottom: 5px;
 }
 
-.playlist-detail-text > h6 {
-  margin: 10px;
-  border: 0;
+.playlist-detail-text-h6 {
+  margin: 0;
 }
 
 .playlist-cover{
@@ -407,7 +409,17 @@ a:hover{
 .playlist-show-title{
   font-size: 1.1em;
   color: #FFF;
+  margin-bottom: 5px;
 }
+
+.playlist-play{
+  min-height: 40px;
+}
+
+.playlist-button{
+  min-height: 40px;
+}
+
 
 .musical-note{
   height: 40%;
@@ -479,6 +491,7 @@ a:hover{
 }
 
 .button-progress{
+  height: 65px;
   display: flex;
   flex-direction: column;
   align-items: center;

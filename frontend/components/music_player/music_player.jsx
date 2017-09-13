@@ -54,6 +54,10 @@ class MusicPlayer extends React.Component {
     let seconds = Math.floor(time) % 60;
     let minutes = Math.floor(time / 60);
 
+    if (!this.props.currentTrack.id){
+      return "";
+    }
+
     if (time < 10){
       return `0:0${seconds}`;
     } else if (time < 60 ) {
@@ -68,9 +72,10 @@ class MusicPlayer extends React.Component {
   handlePlay(e){
 
     e.preventDefault();
-
-    this.props.playTrack();
-    this.audio.play();
+    if (this.props.currentTrack.id){
+      this.props.playTrack();
+      this.audio.play();
+    }
   }
 
   handlePause(e){
