@@ -9,8 +9,9 @@
 User.destroy_all
 
 User1 = User.create(username: "phausken", password: "password")
-User2 = User.create(username: "zhausken", password: "password")
+User2 = User.create(username: "kenneth_ng", password: "password")
 User3 = User.create(username: "Guest", password: "password")
+User4 = User.create(username: "nchapman1" password: "password")
 
 Playlist.destroy_all
 
