@@ -485,9 +485,21 @@ a:hover{
   width: 110px;
 }
 
+.skip-button{
+  border: none;
+  font-size: 20px;
+  margin: 0px;
+  padding: 0px;
+}
+
 
 .fa.fa-play-circle-o{
   font-size: 48px;
+}
+
+.all-player-buttons{
+  display: flex;
+  width: 200px;
 }
 
 .button-progress{

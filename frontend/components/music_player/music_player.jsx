@@ -18,6 +18,7 @@ class MusicPlayer extends React.Component {
     this.handlePlay = this.handlePlay.bind(this);
     this.playButton = this.playButton.bind(this);
     this.handleNext = this.handleNext.bind(this);
+    this.handlePrevious = this.handlePrevious.bind(this);
     this.setVolume = this.setVolume.bind(this);
     this.parseTime = this.parseTime.bind(this);
   }
@@ -47,6 +48,11 @@ class MusicPlayer extends React.Component {
   handleNext(e){
     e.preventDefault;
     this.props.nextPlaylist();
+  }
+
+  handlePrevious(e){
+    e.preventDefault;
+    this.props.previousPlaylist();
   }
 
   parseTime(time){
@@ -110,7 +116,11 @@ class MusicPlayer extends React.Component {
         <div className="progress-time">
           <h6>{ this.parseTime(this.audio.currentTime) }</h6>
           <div className="button-progress">
-            { this.playButton() }
+            <div className="all-player-buttons">
+              <button onClick={ this.handlePrevious } className="skip-button"><i className="fa fa-step-backward" aria-hidden="true"></i></button>
+              { this.playButton() }
+              <button onClick={ this.handleNext } className="skip-button"><i className="fa fa-step-forward" aria-hidden="true"></i></button>
+            </div>
           <div style={{width: "642px"}}className="progress-bar-container">
             <div className="progress-bar" style={{width: `${642 * (this.audio.currentTime / (this.audio.duration || 1))}`}}/></div>
 
