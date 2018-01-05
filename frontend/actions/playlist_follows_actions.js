@@ -1,4 +1,4 @@
-import * as APIUtil from '../util/playlist_follows_util';
+import * as APIUtil from "../util/playlist_follows_util";
 
 export const createPlaylistFollow = playlistFollow => dispatch => {
   return APIUtil.createPlaylistFollow(playlistFollow);

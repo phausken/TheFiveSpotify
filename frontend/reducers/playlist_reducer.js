@@ -1,13 +1,15 @@
-import { RECEIVE_PLAYLIST, RECEIVE_PLAYLISTS, REMOVE_PLAYLIST } from '../actions/playlist_actions';
-import { merge } from 'lodash';
-
-
+import {
+  RECEIVE_PLAYLIST,
+  RECEIVE_PLAYLISTS,
+  REMOVE_PLAYLIST
+} from "../actions/playlist_actions";
+import { merge } from "lodash";
 
 const playlistReducer = (state = {}, action) => {
   Object.freeze(state);
   let nextState;
 
-  switch(action.type){
+  switch (action.type) {
     case RECEIVE_PLAYLISTS:
       return action.playlists;
     case RECEIVE_PLAYLIST:
@@ -18,7 +20,7 @@ const playlistReducer = (state = {}, action) => {
       return nextState;
     default:
       return state;
-    }
+  }
 };
 
 export default playlistReducer;

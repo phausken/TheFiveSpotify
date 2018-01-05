@@ -1,12 +1,10 @@
-import { RECEIVE_USER, RECEIVE_USERS } from '../actions/user_actions';
-import { merge } from 'lodash';
-
-
+import { RECEIVE_USER, RECEIVE_USERS } from "../actions/user_actions";
+import { merge } from "lodash";
 
 const userReducer = (state = {}, action) => {
   Object.freeze(state);
 
-  switch(action.type){
+  switch (action.type) {
     case RECEIVE_USERS:
       return action.users;
     case RECEIVE_USER:
@@ -14,7 +12,7 @@ const userReducer = (state = {}, action) => {
       return merge({}, state, newUser);
     default:
       return state;
-    }
+  }
 };
 
 export default userReducer;

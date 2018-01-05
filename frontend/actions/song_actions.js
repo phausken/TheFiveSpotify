@@ -1,11 +1,11 @@
-import * as APIUtil from '../util/song_util';
+import * as APIUtil from "../util/song_util";
 
-export const RECEIVE_SONGS = 'RECEIVE_SONGS';
+export const RECEIVE_SONGS = "RECEIVE_SONGS";
 
-export const receiveSongs = (songs) => {
+export const receiveSongs = songs => {
   return {
     type: RECEIVE_SONGS,
-    songs,
+    songs
   };
 };
 

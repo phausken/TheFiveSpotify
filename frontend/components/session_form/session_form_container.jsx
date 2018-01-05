@@ -1,31 +1,33 @@
-import { connect } from 'react-redux';
-import SessionForm from './session_form';
-import {login, signup, clearErrors} from '../../actions/session_actions';
-import { withRouter } from 'react-router-dom';
+import { connect } from "react-redux";
+import SessionForm from "./session_form";
+import { login, signup, clearErrors } from "../../actions/session_actions";
+import { withRouter } from "react-router-dom";
 
 const mapStateToProps = (state, ownProps) => {
   const formType = ownProps.location.pathname.slice(1);
   return {
     loggedIn: Boolean(state.session.currentUser),
     errors: state.session.errors,
-    formType,
+    formType
   };
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => {
-  if ( ownProps.location.pathname.slice(1) === 'login' ) {
+  if (ownProps.location.pathname.slice(1) === "login") {
     return {
-    processForm: (user) => dispatch(login(user)),
-    processGuest: (user) => dispatch(login(user)),
-    clearErrors: () => dispatch(clearErrors()),
+      processForm: user => dispatch(login(user)),
+      processGuest: user => dispatch(login(user)),
+      clearErrors: () => dispatch(clearErrors())
     };
-  } else if ( ownProps.location.pathname.slice(1) === 'signup' ) {
+  } else if (ownProps.location.pathname.slice(1) === "signup") {
     return {
-     processForm: (user) => dispatch(signup(user)),
-     processGuest: (user) => dispatch(login(user)),
-     clearErrors: () => dispatch(clearErrors()),
-   };
+      processForm: user => dispatch(signup(user)),
+      processGuest: user => dispatch(login(user)),
+      clearErrors: () => dispatch(clearErrors())
+    };
   }
 };
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(SessionForm));
+export default withRouter(
+  connect(mapStateToProps, mapDispatchToProps)(SessionForm)
+);

@@ -1,15 +1,16 @@
-import * as APIUtil from '../util/search_util';
+import * as APIUtil from "../util/search_util";
 
-export const RECEIVE_RESULTS = 'RECEIVE_RESULTS';
+export const RECEIVE_RESULTS = "RECEIVE_RESULTS";
 
-export const receiveResults = (results) => {
+export const receiveResults = results => {
   return {
     type: RECEIVE_RESULTS,
-    results,
+    results
   };
 };
 
-export const fetchResults = (search) => dispatch => {
-  return APIUtil.fetchResults(search)
-  .then(results => dispatch(receiveResults(results)));
+export const fetchResults = search => dispatch => {
+  return APIUtil.fetchResults(search).then(results =>
+    dispatch(receiveResults(results))
+  );
 };

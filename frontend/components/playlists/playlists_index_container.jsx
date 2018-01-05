@@ -1,17 +1,16 @@
-import { connect } from 'react-redux';
-import PlaylistsIndex from './playlists_index';
-import { fetchPlaylists } from '../../actions/playlist_actions';
-import { getCurrentUserPlaylists } from '../../reducers/selectors';
+import { connect } from "react-redux";
+import PlaylistsIndex from "./playlists_index";
+import { fetchPlaylists } from "../../actions/playlist_actions";
+import { getCurrentUserPlaylists } from "../../reducers/selectors";
 
-const mapStateToProps = (state) => {
-
+const mapStateToProps = state => {
   const userPlaylists = {
-    playlists: getCurrentUserPlaylists(state),
+    playlists: getCurrentUserPlaylists(state)
   };
   return userPlaylists;
 };
 
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = dispatch => {
   return {
     requestPlaylists: () => dispatch(fetchPlaylists())
   };

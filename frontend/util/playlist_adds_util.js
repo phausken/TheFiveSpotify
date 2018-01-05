@@ -1,15 +1,15 @@
-export const createPlaylistAdd = (playlistAdd) => {
+export const createPlaylistAdd = playlistAdd => {
   return $.ajax({
     url: `api/playlist_adds`,
-    method: 'POST',
-    data: { playlistAdd },
+    method: "POST",
+    data: { playlistAdd }
   });
 };
 
-export const deletePlaylistAdd = (playlistAdd) => {
+export const deletePlaylistAdd = playlistAdd => {
   return $.ajax({
     url: `api/playlist_adds/${playlistAdd.id}`,
-    method: 'DELETE',
+    method: "DELETE",
     data: { playlistAdd }
   });
 };

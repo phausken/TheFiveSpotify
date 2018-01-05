@@ -1,16 +1,15 @@
-import React from 'react';
-import ReactAudioPlayer from 'react-audio-player';
-
+import React from "react";
+import ReactAudioPlayer from "react-audio-player";
 
 class MusicPlayer extends React.Component {
-  constructor(props){
+  constructor(props) {
     super(props);
 
     this.state = {
       time: 0
     };
 
-    this.audio = this.audio || {currentTime: "", duration: ""};
+    this.audio = this.audio || { currentTime: "", duration: "" };
 
     this.updateTime = this.updateTime.bind(this);
     this.setState = this.setState.bind(this);
@@ -23,50 +22,48 @@ class MusicPlayer extends React.Component {
     this.parseTime = this.parseTime.bind(this);
   }
 
-  updateTime(){
-    return this.setState({time: this.audio.currentTime});
+  updateTime() {
+    return this.setState({ time: this.audio.currentTime });
   }
 
-  componentDidMount(){
+  componentDidMount() {
     setInterval(this.updateTime, 50);
   }
 
-  componentDidUpdate(nextprops){
-
-    if (this.props.currentTrack.id !== nextprops.currentTrack.id){
-    this.audio.pause();
-    this.audio.load();
-    this.audio.play();
-  } else if ( this.props.status === "paused"){
-    this.audio.pause();
-  } else if ( this.props.status === "playing"){
-    this.audio.play();
+  componentDidUpdate(nextprops) {
+    if (this.props.currentTrack.id !== nextprops.currentTrack.id) {
+      this.audio.pause();
+      this.audio.load();
+      this.audio.play();
+    } else if (this.props.status === "paused") {
+      this.audio.pause();
+    } else if (this.props.status === "playing") {
+      this.audio.play();
+    }
   }
 
-  }
-
-  handleNext(e){
+  handleNext(e) {
     e.preventDefault;
     this.props.nextPlaylist();
   }
 
-  handlePrevious(e){
+  handlePrevious(e) {
     e.preventDefault;
     this.props.previousPlaylist();
   }
 
-  parseTime(time){
+  parseTime(time) {
     time = time || 0;
     let seconds = Math.floor(time) % 60;
     let minutes = Math.floor(time / 60);
 
-    if (!this.props.currentTrack.id){
+    if (!this.props.currentTrack.id) {
       return "";
     }
 
-    if (time < 10){
+    if (time < 10) {
       return `0:0${seconds}`;
-    } else if (time < 60 ) {
+    } else if (time < 60) {
       return `0:${seconds}`;
     } else if (seconds < 10) {
       return `${minutes}:0${seconds}`;
@@ -75,64 +72,99 @@ class MusicPlayer extends React.Component {
     }
   }
 
-  handlePlay(e){
-
+  handlePlay(e) {
     e.preventDefault();
-    if (this.props.currentTrack.id){
+    if (this.props.currentTrack.id) {
       this.props.playTrack();
       this.audio.play();
     }
   }
 
-  handlePause(e){
+  handlePause(e) {
     e.preventDefault();
     this.audio.pause();
     this.props.pauseTrack();
   }
 
-  playButton(){
-    if (this.props.status === "playing"){
-      return <button onClick={ this.handlePause } className="play-button"><i className="fa fa-pause" aria-hidden="true"></i></button>;
+  playButton() {
+    if (this.props.status === "playing") {
+      return (
+        <button onClick={this.handlePause} className="play-button">
+          <i className="fa fa-pause" aria-hidden="true" />
+        </button>
+      );
     } else {
-      return <button onClick={ this.handlePlay } className="play-button"><i className="fa fa-play" aria-hidden="true"></i></button>;
+      return (
+        <button onClick={this.handlePlay} className="play-button">
+          <i className="fa fa-play" aria-hidden="true" />
+        </button>
+      );
     }
   }
 
-
-  setVolume(){
+  setVolume() {
     this.audio.volume = this.volume.value;
   }
 
-  render(){
+  render() {
     let trackName = this.props.currentTrack.title || "";
-    let artistName = this.props.currentTrack.artist || {name: ""};
+    let artistName = this.props.currentTrack.artist || { name: "" };
 
     return (
       <div className="now-playing-container">
         <div className="now-playing-track-info">
-          <h6>{ trackName }</h6>
-          <h6>{ artistName.name }</h6>
+          <h6>{trackName}</h6>
+          <h6>{artistName.name}</h6>
         </div>
         <div className="progress-time">
-          <h6>{ this.parseTime(this.audio.currentTime) }</h6>
+          <h6>{this.parseTime(this.audio.currentTime)}</h6>
           <div className="button-progress">
             <div className="all-player-buttons">
-              <button onClick={ this.handlePrevious } className="skip-button"><i className="fa fa-step-backward" aria-hidden="true"></i></button>
-              { this.playButton() }
-              <button onClick={ this.handleNext } className="skip-button"><i className="fa fa-step-forward" aria-hidden="true"></i></button>
+              <button onClick={this.handlePrevious} className="skip-button">
+                <i className="fa fa-step-backward" aria-hidden="true" />
+              </button>
+              {this.playButton()}
+              <button onClick={this.handleNext} className="skip-button">
+                <i className="fa fa-step-forward" aria-hidden="true" />
+              </button>
             </div>
-          <div style={{width: "642px"}}className="progress-bar-container">
-            <div className="progress-bar" style={{width: `${642 * (this.audio.currentTime / (this.audio.duration || 1))}`}}/></div>
-
-      </div>
-      <h6>{ this.parseTime(this.audio.duration) }</h6>
+            <div style={{ width: "642px" }} className="progress-bar-container">
+              <div
+                className="progress-bar"
+                style={{
+                  width: `${642 *
+                    (this.audio.currentTime / (this.audio.duration || 1))}`
+                }}
+              />
+            </div>
+          </div>
+          <h6>{this.parseTime(this.audio.duration)}</h6>
         </div>
-        <div><i className="fa fa-volume-up" aria-hidden="true"></i><input onChange={ this.setVolume } ref={(volume) => {this.volume = volume; } } min="0" max="1" step="0.1" type="range"/></div>
-          <audio onEnded={ this.handleNext } ref={(audio) => { this.audio = audio; } } autoPlay="true" src={ `${this.props.currentTrack.url}` } id="musicPlayer">
-           <source src={`${this.props.currentTrack.url}`}></source>
+        <div>
+          <i className="fa fa-volume-up" aria-hidden="true" />
+          <input
+            onChange={this.setVolume}
+            ref={volume => {
+              this.volume = volume;
+            }}
+            min="0"
+            max="1"
+            step="0.1"
+            type="range"
+          />
+        </div>
+        <audio
+          onEnded={this.handleNext}
+          ref={audio => {
+            this.audio = audio;
+          }}
+          autoPlay="true"
+          src={`${this.props.currentTrack.url}`}
+          id="musicPlayer"
+        >
+          <source src={`${this.props.currentTrack.url}`} />
         </audio>
-
-        </div>
+      </div>
     );
   }
 }

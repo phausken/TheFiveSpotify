@@ -1,13 +1,13 @@
 export const fetchUsers = () => {
   return $.ajax({
-    url: 'api/users',
-    method: 'GET',
+    url: "api/users",
+    method: "GET"
   });
 };
 
-export const fetchUser = (id) => {
+export const fetchUser = id => {
   return $.ajax({
     url: `api/users/${id}`,
-    method: 'GET',
+    method: "GET"
   });
 };

@@ -1,17 +1,15 @@
-import React from 'react';
-import UsernameContainer from '../username/username_container';
-import PlaylistsIndexContainer from '../playlists/playlists_index_container';
-import PlaylistShowContainer from '../playlists/playlist_show_container';
-import SongIndexContainer from '../songs/song_index_container';
-import { fetchPlaylists } from '../../actions/playlist_actions';
-import { Route, Switch, Link, NavLink } from 'react-router-dom';
-import MusicPlayerContainer from '../music_player/music_player_container';
-import SearchContainer from '../search/search_container';
-
+import React from "react";
+import UsernameContainer from "../username/username_container";
+import PlaylistsIndexContainer from "../playlists/playlists_index_container";
+import PlaylistShowContainer from "../playlists/playlist_show_container";
+import SongIndexContainer from "../songs/song_index_container";
+import { fetchPlaylists } from "../../actions/playlist_actions";
+import { Route, Switch, Link, NavLink } from "react-router-dom";
+import MusicPlayerContainer from "../music_player/music_player_container";
+import SearchContainer from "../search/search_container";
 
 class MainPage extends React.Component {
-
-  componentDidMount(){
+  componentDidMount() {
     this.props.requestSongs();
     this.props.requestPlaylists();
   }
@@ -23,30 +21,48 @@ class MainPage extends React.Component {
           <div className="left-nav">
             <nav className="left-nav-top">
               <div className="nav-search">
-                <NavLink to='/main_page/search' activeStyle={{color: '#1db954'}}><h3 className="left-nav-search-text">Search</h3>
+                <NavLink
+                  to="/main_page/search"
+                  activeStyle={{ color: "#1db954" }}
+                >
+                  <h3 className="left-nav-search-text">Search</h3>
 
-                <div className="mag-glass"><i className="fa fa-search" aria-hidden="true"></i></div></NavLink>
-
+                  <div className="mag-glass">
+                    <i className="fa fa-search" aria-hidden="true" />
+                  </div>
+                </NavLink>
               </div>
               <div className="left-nav-link">
-              <NavLink to='/main_page/playlists' activeStyle={{color: '#1db954'}} ><h3>Your Music</h3></NavLink>
+                <NavLink
+                  to="/main_page/playlists"
+                  activeStyle={{ color: "#1db954" }}
+                >
+                  <h3>Your Music</h3>
+                </NavLink>
               </div>
             </nav>
             <nav className="left-nav-username-container">
               <div className="left-nav-username">
-              < UsernameContainer />
+                <UsernameContainer />
               </div>
             </nav>
-            </div>
           </div>
-      <Switch>
-        <Route exact path='/main_page/playlists' component={PlaylistsIndexContainer} />
-        <Route path='/main_page/playlists/:playlistId' component={PlaylistShowContainer} />
-        <Route path='/main_page/songs' component={ SongIndexContainer } />
-        <Route path='/main_page/search' component={ SearchContainer }/>
-      </Switch>
-      <MusicPlayerContainer/>
         </div>
+        <Switch>
+          <Route
+            exact
+            path="/main_page/playlists"
+            component={PlaylistsIndexContainer}
+          />
+          <Route
+            path="/main_page/playlists/:playlistId"
+            component={PlaylistShowContainer}
+          />
+          <Route path="/main_page/songs" component={SongIndexContainer} />
+          <Route path="/main_page/search" component={SearchContainer} />
+        </Switch>
+        <MusicPlayerContainer />
+      </div>
     );
   }
 }

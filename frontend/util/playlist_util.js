@@ -1,36 +1,36 @@
 export const fetchPlaylists = () => {
   return $.ajax({
-    url: 'api/playlists',
-    method: 'GET',
+    url: "api/playlists",
+    method: "GET"
   });
 };
 
-export const fetchPlaylist = (id) => {
+export const fetchPlaylist = id => {
   return $.ajax({
     url: `api/playlists/${id}`,
-    method: 'GET',
+    method: "GET"
   });
 };
 
-export const createPlaylist = (playlist) => {
+export const createPlaylist = playlist => {
   return $.ajax({
     url: `api/playlists/`,
-    method: 'POST',
-    data: { playlist },
+    method: "POST",
+    data: { playlist }
   });
 };
 
-export const editPlaylist = (playlist) => {
+export const editPlaylist = playlist => {
   return $.ajax({
     url: `api/playlists/${playlist.id}`,
-    method: 'PATCH',
-    data: { playlist },
+    method: "PATCH",
+    data: { playlist }
   });
 };
 
-export const deletePlaylist = (id) => {
+export const deletePlaylist = id => {
   return $.ajax({
     url: `api/playlists/${id}`,
-    method: 'DELETE',
+    method: "DELETE"
   });
 };

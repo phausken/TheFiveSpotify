@@ -1,10 +1,10 @@
-import { connect } from 'react-redux';
-import { logout } from '../../actions/session_actions';
-import Username from './username';
+import { connect } from "react-redux";
+import { logout } from "../../actions/session_actions";
+import Username from "./username";
 
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
   return {
-    currentUser: state.session.currentUser,
+    currentUser: state.session.currentUser
   };
 };
 
@@ -14,4 +14,4 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Username)
+export default connect(mapStateToProps, mapDispatchToProps)(Username);
